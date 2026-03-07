@@ -1,166 +1,22 @@
-# Tesla FSD Finder Australia
+# Tesla FSD Finder Australia v1.2
 
-A web application that aggregates used Tesla listings from major Australian car marketplaces and identifies vehicles that may have Full Self-Driving (FSD) or Enhanced Autopilot (EAP) capabilities -- features that are often underpriced in the resale market.
-
-<!-- ![Tesla FSD Finder Screenshot](screenshot.png) -->
+A web application that aggregates used Tesla listings from **7 major Australian car marketplaces** and identifies vehicles with Full Self-Driving (FSD) or Enhanced Autopilot (EAP) capabilities -- features often underpriced in the resale market.
 
 ---
 
 ## Overview
 
-Tesla's FSD and EAP packages can add $5,000-$15,000+ in value, but sellers often don't highlight these features in their listings. This tool scrapes Australian car listing sites, analyses descriptions for FSD/EAP keywords, and presents the results in a searchable dashboard -- helping buyers find hidden value.
+Tesla's FSD and EAP packages can add $5,000-$15,000+ in value, but sellers often don't highlight these features. This tool scrapes Australian car listing sites every 6 hours, analyses descriptions for FSD/EAP keywords, tracks price changes, and presents everything in a searchable dashboard.
 
-### Current Data Snapshot
+### Key Numbers
 
 | Metric | Value |
 |--------|-------|
-| Total Listings | 146 |
-| FSD Confirmed | 1 |
-| FSD Likely (EAP) | 9 |
-| FSD Possible | 1 |
-| Average Price | $45,103 AUD |
-| Price Range | $24,999 - $89,400 AUD |
-| Data Sources | Drive.com.au, AutoTrader.com.au |
-| Last Updated | March 2026 |
-
----
-
-## Features
-
-- **Real-time Scraping** -- Aggregates Tesla listings from Drive.com.au and AutoTrader.com.au
-- **FSD Detection Engine** -- Keyword-based analysis of listing descriptions and variants to identify FSD/EAP equipped vehicles
-- **Advanced Filtering** -- Filter by model (Model 3, Y, S, X), state, price range, kilometres, and FSD status
-- **Multiple Sort Options** -- Sort by newest, price (low/high), kilometres, or year
-- **Dark-Themed Dashboard** -- Modern, responsive SPA with real-time statistics
-- **REST API** -- Full JSON API with OpenAPI/Swagger documentation at `/docs`
-- **One-Click Deploy** -- Ready for Railway, Render, Heroku, or any Docker host
-
----
-
-## Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
-| Backend | Python 3.11+ / FastAPI |
-| Frontend | Vanilla HTML/CSS/JS (no build step) |
-| Server | Uvicorn (ASGI) |
-| Data | JSON flat-file (scraped listings) |
-| Deployment | Railway / Nixpacks |
-
----
-
-## Project Structure
-
-```
-tesla-fsd-finder-au/
-├── main.py              # FastAPI app (API + serves frontend)
-├── requirements.txt     # Python dependencies
-├── Procfile             # Process file for Railway/Heroku
-├── railway.json         # Railway deployment config
-├── nixpacks.toml        # Nixpacks build config
-├── .gitignore
-├── README.md
-├── static/
-│   ├── index.html       # Main SPA page
-│   ├── style.css        # Dark theme stylesheet
-│   └── app.js           # Frontend application logic
-└── data/
-    └── listings.json    # Scraped listing data (146 listings)
-```
-
----
-
-## Quick Start
-
-### Prerequisites
-
-- Python 3.11+
-- pip
-
-### Local Development
-
-```bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/tesla-fsd-finder-au.git
-cd tesla-fsd-finder-au
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate   # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Start the development server
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
-```
-
-Open [http://localhost:8000](http://localhost:8000) in your browser.
-
-### API Documentation
-
-Once running, interactive API docs are available at:
-- **Swagger UI**: [http://localhost:8000/docs](http://localhost:8000/docs)
-- **ReDoc**: [http://localhost:8000/redoc](http://localhost:8000/redoc)
-
----
-
-## API Endpoints
-
-### `GET /api/health`
-Health check with listing count and last update timestamp.
-
-### `GET /api/stats`
-Dashboard statistics: totals, FSD breakdown, price stats, model/state/source distributions.
-
-### `GET /api/listings`
-All listings with optional filters:
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `model` | string | Comma-separated: `Model 3`, `Model Y`, `Model S`, `Model X` |
-| `state` | string | Comma-separated state codes: `NSW`, `VIC`, `QLD`, `WA`, `SA`, `TAS`, `ACT`, `NT` |
-| `fsd_status` | string | Comma-separated: `confirmed`, `likely`, `possible`, `none` |
-| `min_price` | int | Minimum price in AUD |
-| `max_price` | int | Maximum price in AUD |
-| `max_km` | int | Maximum odometer reading in km |
-| `sort` | string | `newest`, `price_asc`, `price_desc`, `km_asc`, `year_desc` |
-
-**Example:**
-```bash
-# Find FSD-equipped Model 3s under $50k
-curl "http://localhost:8000/api/listings?model=Model+3&fsd_status=confirmed,likely&max_price=50000"
-```
-
-### `GET /api/listing/{id}`
-Single listing detail by ID.
-
-### `POST /api/refresh`
-Reload listings from the data file.
-
----
-
-## FSD Detection
-
-The FSD detection engine analyses each listing's title, description, and variant fields for keywords indicating FSD or EAP capability.
-
-### Detection Levels
-
-| Status | Meaning | Keywords / Signals |
-|--------|---------|--------------------|
-| **confirmed** | Strong evidence of FSD | "full self-driving", "fsd capability", "fsd included" |
-| **likely** | Probable EAP/FSD (Enhanced Autopilot keywords) | "enhanced autopilot", "EAP", "autopilot upgrade", "HW3", "HW4" |
-| **possible** | Some autopilot signals worth investigating | "autopilot", "self driving", "autonomous" |
-| **none** | No FSD/EAP keywords detected | -- |
-
-### How It Works
-
-1. Listing title, variant, and description text are concatenated and lowercased
-2. A tiered keyword matching system checks for FSD, EAP, and autopilot terms
-3. Hardware version detection (HW3/HW4) is used as a supporting signal
-4. Each listing receives a status (`confirmed` / `likely` / `possible` / `none`)
-
-> **Note:** Keyword detection is heuristic. Always verify FSD status directly with Tesla or through the vehicle's touchscreen before purchasing.
+| Data Sources | 7 (Carsales, Drive, AutoTrader, Gumtree, CarsGuide, Pickles, Facebook) |
+| FSD Detection | 3-tier confidence scoring (Confirmed / Likely / Possible) |
+| HW Inference | Automatic HW2/2.5/3/4 detection from model year |
+| Scrape Interval | Every 6 hours (background scheduler) |
+| Price Tracking | Historical price recording with drop alerts |
 
 ---
 
@@ -168,118 +24,177 @@ The FSD detection engine analyses each listing's title, description, and variant
 
 | Source | Method | Coverage |
 |--------|--------|----------|
-| **Drive.com.au** | Next.js SSR data extraction (`__NEXT_DATA__`) | Titles, prices, locations, variants |
-| **AutoTrader.com.au** | Public search API (`listings.platform.autotrader.com.au`) | Full descriptions, seller info, images |
-
-### Data Pipeline
-
-1. **Scrape** -- Fetch Tesla listings from each source using their public endpoints
-2. **Normalise** -- Map each source's field names to a unified schema
-3. **Deduplicate** -- Remove duplicates based on title + price + location matching
-4. **Detect FSD** -- Run keyword analysis on every listing
-5. **Serve** -- Load the JSON data into FastAPI's in-memory cache on startup
+| **Carsales.com.au** | HTML scraping (BeautifulSoup) | Australia's largest marketplace (10M+ monthly visits) |
+| **Drive.com.au** | Next.js SSR JSON extraction | 4.8M monthly visits, strong dealer network |
+| **AutoTrader.com.au** | JSON-LD + HTML parsing | Part of Gumtree Group |
+| **Gumtree.com.au** | Search API + HTML | 6.7M monthly visits, mostly private sellers |
+| **CarsGuide.com.au** | Path-based HTML scraping | Part of Gumtree Group, 12K+ car reviews |
+| **Pickles.com.au** | Auction listing scraper | Salvage, ex-fleet, insurance write-offs |
+| **Facebook Marketplace** | Apify actor (optional) | Requires `APIFY_TOKEN` env var |
 
 ---
 
-## Deployment
+## Features
 
-### Railway (Recommended)
+### Scraping Engine (`scrapers.py`)
+- **7 concurrent scrapers** with async httpx
+- Rotating User-Agent headers and 2s rate limiting
+- FSD keyword detection with 3-tier confidence scoring
+- Australian state inference from location strings
+- Hardware version inference from model year + model name
+- Cross-source deduplication (fuzzy matching on title + price + state)
+- Detail page enrichment for FSD-possible listings
 
-1. Push this repo to GitHub
-2. Go to [railway.app](https://railway.app) and create a new project
-3. Select "Deploy from GitHub repo"
-4. Railway auto-detects the `railway.json` and deploys
+### Backend (`main.py`)
+- **Background scheduler** -- auto-scrapes every 6 hours
+- **Price history tracking** -- records price changes, detects drops
+- **Price drop alerts** -- automatic notifications when prices decrease
+- **Expanded filters** -- source, year range, seller type, has images, price drops
+- **Free-text search** -- across title, description, location, variant
 
-The included `railway.json` and `nixpacks.toml` handle all configuration.
+#### API Endpoints
 
-### Render
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/listings` | GET | All listings with filters and sorting |
+| `/api/stats` | GET | Dashboard statistics with breakdowns |
+| `/api/sources` | GET | Per-source health and counts |
+| `/api/alerts` | GET | Price drop notifications |
+| `/api/price-history/{id}` | GET | Price history for a specific listing |
+| `/api/listing/{id}` | GET | Single listing details |
+| `/api/refresh` | POST | Trigger live re-scrape (background) |
+| `/api/refresh-disk` | POST | Reload from disk (no scrape) |
+| `/api/health` | GET | Health check with version info |
 
-1. Create a new Web Service on [render.com](https://render.com)
-2. Connect your GitHub repo
-3. Set the start command: `uvicorn main:app --host 0.0.0.0 --port $PORT`
-4. Deploy
+### Frontend
+- **Source filter pills** -- colour-coded by marketplace
+- **3 view modes** -- Cards, Table, and Map (Leaflet)
+- **Price drop indicators** -- red arrow with percentage on discounted listings
+- **Comparison mode** -- select 2-3 listings for side-by-side comparison
+- **Watchlist** -- save listings to localStorage with heart icon
+- **FSD deadline banner** -- countdown to March 31, 2026 subscription-only cutoff
+- **Search bar** -- instant free-text search across all fields
+- **Dark/light theme toggle** -- persisted to localStorage
+- **Mobile bottom nav** -- replaces hamburger menu on small screens
+- **Stats dashboard** -- Chart.js charts for sources, prices, models, states
+- **Source-coloured card accents** -- instant visual identification of listing origin
 
-### Docker
+---
 
-```dockerfile
-FROM python:3.11-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
-EXPOSE 8000
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
-```
+## Tech Stack
+
+| Component | Technology |
+|-----------|-----------|
+| Backend | Python 3.11+, FastAPI, Uvicorn |
+| Scraping | httpx (async), BeautifulSoup4, lxml |
+| Frontend | Vanilla JS (ES6+), Bootstrap 5.3, Leaflet, Chart.js |
+| Deployment | Railway (Nixpacks), Docker-compatible |
+
+---
+
+## Quick Start
+
+### Local Development
 
 ```bash
-docker build -t tesla-fsd-finder .
-docker run -p 8000:8000 tesla-fsd-finder
+# Clone
+git clone https://github.com/beetrootblues/tesla-fsd-finder-au.git
+cd tesla-fsd-finder-au
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-### Heroku
+Open [http://localhost:8000](http://localhost:8000)
 
-The included `Procfile` works with Heroku out of the box:
-```bash
-heroku create tesla-fsd-finder-au
-git push heroku main
+### Environment Variables
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `PORT` | No | Server port (default: 8000, Railway sets automatically) |
+| `APIFY_TOKEN` | No | Apify API token for Facebook Marketplace scraping |
+
+### Deploy to Railway
+
+1. Go to [railway.app/new](https://railway.app/new) and sign in with GitHub
+2. Select "Deploy from GitHub repo" and pick this repository
+3. Click Deploy -- Railway auto-detects `railway.json` and `Procfile`
+4. (Optional) Add `APIFY_TOKEN` in Railway environment variables for Facebook data
+
+No other configuration needed. The app runs with zero required env vars.
+
+---
+
+## Project Structure
+
+```
+tesla-fsd-finder-au/
+  main.py              # FastAPI backend v1.2 (API + scheduler)
+  scrapers.py          # Multi-source scraper engine (7 sources)
+  requirements.txt     # Python dependencies
+  Procfile             # Railway/Heroku process file
+  railway.json         # Railway deployment config
+  nixpacks.toml        # Nixpacks build config
+  .gitignore
+  data/
+    listings.json      # Scraped listing data (auto-generated)
+    price_history.json # Price tracking data (auto-generated)
+    alerts.json        # Price drop alerts (auto-generated)
+  static/
+    index.html         # Frontend HTML
+    app.js             # Frontend logic (1000+ lines)
+    style.css          # Styles with dark/light theme
 ```
 
 ---
 
-## Model Distribution
+## FSD Detection Logic
 
-| Model | Count | Percentage |
-|-------|-------|------------|
-| Model 3 | 81 | 55.5% |
-| Model Y | 45 | 30.8% |
-| Model X | 12 | 8.2% |
-| Model S | 8 | 5.5% |
+The scraper analyses listing titles, descriptions, and feature lists for keywords in three tiers:
 
-## State Distribution
+| Tier | Confidence | Keywords |
+|------|-----------|----------|
+| **Confirmed** | 100% | "full self-driving", "fsd capability", "fsd included/enabled/purchased" |
+| **Likely** | 70% | "enhanced autopilot", "navigate on autopilot", "smart summon", "autopark" |
+| **Possible** | 30% | "autopilot", "hw4", "hardware 4", "fsd", "eap" |
 
-| State | Count |
-|-------|-------|
-| VIC | 46 |
-| WA | 42 |
-| NSW | 24 |
-| QLD | 19 |
-| ACT | 7 |
-| TAS | 1 |
-| SA | 1 |
+Hardware version is inferred from model year:
+- **HW4**: Model 3 (2024+), Model Y (2024+), Model S/X (2023+), Cybertruck
+- **HW3**: 2020-2023 models
+- **HW2.5**: 2018-2019 models
 
 ---
 
-## Contributing
+## Changelog
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/add-carsales-scraper`)
-3. Commit your changes (`git commit -m 'Add Carsales scraper'`)
-4. Push to the branch (`git push origin feature/add-carsales-scraper`)
-5. Open a Pull Request
+### v1.2.0 (March 2026)
+- Added 5 new data sources: Carsales, Gumtree, CarsGuide, Pickles, Facebook Marketplace
+- Background scraper scheduler (every 6 hours)
+- Price history tracking with drop alerts
+- Cross-source deduplication
+- Table view with sortable columns
+- Comparison mode (2-3 listings side-by-side)
+- Watchlist with localStorage persistence
+- FSD March 31 deadline countdown banner
+- Source filter pills with colour coding
+- Free-text search bar
+- Dark/light theme toggle
+- Mobile bottom navigation
+- Stats dashboard with Chart.js visualisations
+- Expanded API: /api/sources, /api/alerts, /api/price-history/{id}
+- New filters: source, year range, seller type, has images, price drops
 
-### Ideas for Contribution
-
-- Add Carsales.com.au scraper
-- Add Facebook Marketplace integration
-- Implement price trend tracking over time
-- Add email alerts for new FSD listings
-- Improve FSD detection with VIN decoding
-- Add map visualisation for listing locations
-
----
-
-## Disclaimer
-
-This is an independent research project for educational purposes only. It is **not affiliated with, endorsed by, or connected to Tesla, Inc.** in any way.
-
-- Listing data is scraped from publicly available car marketplace websites
-- FSD/EAP detection is based on keyword heuristics and may produce false positives or negatives
-- Always verify Full Self-Driving capability directly with Tesla or through the vehicle's interface before making a purchase decision
-- Prices and availability shown may not reflect current market conditions
-- The authors accept no liability for decisions made based on this tool's output
+### v1.0.0 (March 2026)
+- Initial release with Drive.com.au and AutoTrader.com.au
+- FSD keyword detection
+- Card and map views
+- Basic filtering (model, state, FSD status, price, km)
 
 ---
 
 ## License
 
-MIT License. See [LICENSE](LICENSE) for details.
+MIT
