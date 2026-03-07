@@ -1,0 +1,58 @@
+{
+  "$schema": "https://unpkg.com/@capacitor/assets@latest/dist/schema.json",
+  "icon": {
+    "source": "icon.png",
+    "backgroundColor": "#0a0e1a",
+    "sizes": {
+      "ios": [
+        20,
+        29,
+        40,
+        58,
+        60,
+        76,
+        80,
+        87,
+        120,
+        152,
+        167,
+        180,
+        1024
+      ]
+    }
+  },
+  "splash": {
+    "source": "splash.png",
+    "backgroundColor": "#0a0e1a",
+    "resizeMode": "center",
+    "sizes": {
+      "ios": [
+        {
+          "width": 1170,
+          "height": 2532
+        },
+        {
+          "width": 1179,
+          "height": 2556
+        },
+        {
+          "width": 1290,
+          "height": 2796
+        },
+        {
+          "width": 1284,
+          "height": 2778
+        },
+        {
+          "width": 2048,
+          "height": 2732
+        }
+      ]
+    }
+  },
+  "notes": {
+    "instructions": "Place icon.png (1024x1024) and splash.png (2732x2732) in this directory, then run: npm run icons",
+    "format": "PNG with transparency supported for icon",
+    "background": "#0a0e1a matches the app dark theme"
+  }
+}
