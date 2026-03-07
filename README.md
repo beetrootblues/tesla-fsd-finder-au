@@ -132,21 +132,35 @@ No other configuration needed. The app runs with zero required env vars.
 
 ```
 tesla-fsd-finder-au/
-  main.py              # FastAPI backend v1.2 (API + scheduler)
-  scrapers.py          # Multi-source scraper engine (7 sources)
-  requirements.txt     # Python dependencies
-  Procfile             # Railway/Heroku process file
-  railway.json         # Railway deployment config
-  nixpacks.toml        # Nixpacks build config
+  main.py                # FastAPI backend v1.2 (API + scheduler)
+  scrapers.py            # Multi-source scraper engine (7 sources)
+  requirements.txt       # Python dependencies
+  package.json           # Node/Capacitor dependencies (iOS build)
+  capacitor.config.ts    # Capacitor iOS configuration
+  Procfile               # Railway/Heroku process file
+  railway.json           # Railway deployment config
+  nixpacks.toml          # Nixpacks build config
+  DEPLOY-IOS.md          # Full App Store deployment guide
   .gitignore
   data/
-    listings.json      # Scraped listing data (auto-generated)
-    price_history.json # Price tracking data (auto-generated)
-    alerts.json        # Price drop alerts (auto-generated)
+    listings.json        # Scraped listing data (auto-generated)
+    price_history.json   # Price tracking data (auto-generated)
+    alerts.json          # Price drop alerts (auto-generated)
+    devices.json         # Registered iOS device tokens (auto-generated)
   static/
-    index.html         # Frontend HTML
-    app.js             # Frontend logic (1000+ lines)
-    style.css          # Styles with dark/light theme
+    index.html           # Frontend HTML
+    app.js               # Frontend logic + Capacitor bridge
+    style.css            # Styles with dark/light theme
+    offline.html         # Offline fallback page (iOS)
+  ios/
+    App/App/
+      AppDelegate.swift      # Push notifications + biometric auth
+      Info.plist              # iOS app configuration
+      OfflineViewController.swift  # Native offline screen
+  assets/
+    icon-spec.json       # Icon/splash generation spec
+  scripts/
+    build-ios.sh         # iOS build automation script
 ```
 
 ---
@@ -165,6 +179,50 @@ Hardware version is inferred from model year:
 - **HW4**: Model 3 (2024+), Model Y (2024+), Model S/X (2023+), Cybertruck
 - **HW3**: 2020-2023 models
 - **HW2.5**: 2018-2019 models
+
+---
+
+## iOS App (App Store)
+
+The web app is wrapped as a native iOS app using [Capacitor](https://capacitorjs.com/), with native features that go beyond a simple WebView wrapper.
+
+### Native Features
+
+| Feature | Implementation |
+|---------|---------------|
+| Push Notifications | APNs integration for price drop alerts |
+| Biometric Auth | Face ID / Touch ID lock on launch |
+| Native Share | iOS share sheet for listing URLs |
+| Haptic Feedback | Tactile response on watchlist actions |
+| App Badge | Unread alert count on home screen icon |
+| Offline Support | Cached watchlist + native offline screen |
+| Network Monitoring | Auto-detect connectivity changes |
+| Background Refresh | Re-fetch listings when app resumes |
+
+### Quick Build
+
+```bash
+# Prerequisites: macOS, Xcode 15+, Node.js 18+
+chmod +x scripts/build-ios.sh
+./scripts/build-ios.sh --open
+```
+
+This installs dependencies, syncs web assets to the iOS project, and opens Xcode. From there: select your team, Cmd+R to run on simulator or device.
+
+### App Store Deployment
+
+See [DEPLOY-IOS.md](DEPLOY-IOS.md) for the complete guide covering:
+- Xcode signing & capabilities setup
+- TestFlight beta testing
+- App Store Connect submission
+- APNs key configuration for push notifications
+- Review guideline compliance (Guideline 4.2)
+
+### Key Config
+
+- **Bundle ID**: `au.com.teslafsd.finder`
+- **Backend URL**: Set in `capacitor.config.ts` (defaults to Railway deployment)
+- **App Icons**: Place 1024x1024 `icon.png` in `assets/`, run `npm run icons`
 
 ---
 
