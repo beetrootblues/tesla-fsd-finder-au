@@ -574,6 +574,64 @@ async def refresh_from_disk():
 
 
 # ---------------------------------------------------------------------------
+# Push Notification Device Registration (iOS / APNs)
+# ---------------------------------------------------------------------------
+
+DEVICES_FILE = DATA_DIR / "devices.json"
+
+def _load_devices() -> dict:
+    if DEVICES_FILE.exists():
+        try:
+            return json.loads(DEVICES_FILE.read_text())
+        except Exception:
+            pass
+    return {}
+
+def _save_devices(devices: dict):
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    DEVICES_FILE.write_text(json.dumps(devices, indent=2))
+
+
+@app.post("/api/register-device")
+async def register_device(
+    token: str = Query(..., description="APNs device token"),
+    platform: str = Query("ios", description="Platform identifier"),
+    alerts_enabled: bool = Query(True, description="Receive price drop push alerts"),
+):
+    """Register an iOS device token for push notifications."""
+    devices = _load_devices()
+    devices[token] = {
+        "platform": platform,
+        "alerts_enabled": alerts_enabled,
+        "registered_at": datetime.now(timezone.utc).isoformat(),
+        "last_seen": datetime.now(timezone.utc).isoformat(),
+    }
+    _save_devices(devices)
+    logger.info(f"Device registered: {token[:12]}... ({platform})")
+    return {"status": "ok", "token": token[:12] + "...", "alerts_enabled": alerts_enabled}
+
+
+@app.delete("/api/register-device")
+async def unregister_device(
+    token: str = Query(..., description="APNs device token to remove"),
+):
+    """Unregister a device from push notifications."""
+    devices = _load_devices()
+    if token in devices:
+        del devices[token]
+        _save_devices(devices)
+    return {"status": "ok"}
+
+
+@app.get("/api/devices/count")
+async def device_count():
+    """Return count of registered devices (admin/debug)."""
+    devices = _load_devices()
+    active = sum(1 for d in devices.values() if d.get("alerts_enabled"))
+    return {"total": len(devices), "alerts_enabled": active}
+
+
+# ---------------------------------------------------------------------------
 # Run
 # ---------------------------------------------------------------------------
 
