@@ -21,6 +21,7 @@ const state = {
   activeSource: 'all',       // source filter pill
   chartsInitialized: false,
   charts: {},
+  isNative: false,           // set true by NativeBridge.init()
 };
 
 // ---------------------------------------------------------------------------
@@ -717,6 +718,8 @@ function toggleWatch(id) {
     state.watchlist.delete(id);
   } else {
     state.watchlist.add(id);
+    // Native haptic feedback on add
+    if (state.isNative) NativeBridge.hapticImpact('medium');
   }
   saveWatchlist();
   updateWatchlistUI();
@@ -895,6 +898,192 @@ function hideLoading() {
 }
 
 // ---------------------------------------------------------------------------
+// Capacitor Native Bridge
+// ---------------------------------------------------------------------------
+const NativeBridge = {
+  _cap: null,
+  _plugins: {},
+
+  get isNative() {
+    try {
+      return window.Capacitor && window.Capacitor.isNativePlatform();
+    } catch { return false; }
+  },
+
+  async init() {
+    if (!this.isNative) return;
+    state.isNative = true;
+    console.log('[NativeBridge] Running on native iOS');
+
+    // Dynamically import Capacitor plugins
+    try {
+      const { SplashScreen } = await import('@capacitor/splash-screen');
+      const { StatusBar, Style } = await import('@capacitor/status-bar');
+      const { PushNotifications } = await import('@capacitor/push-notifications');
+      const { Share } = await import('@capacitor/share');
+      const { Haptics, ImpactStyle } = await import('@capacitor/haptics');
+      const { Badge } = await import('@capacitor/badge');
+      const { Network } = await import('@capacitor/network');
+      const { App } = await import('@capacitor/app');
+
+      this._plugins = { SplashScreen, StatusBar, Style, PushNotifications, Share, Haptics, ImpactStyle, Badge, Network, App };
+
+      // Configure status bar
+      StatusBar.setStyle({ style: Style.Dark }).catch(() => {});
+
+      // Listen for network changes
+      Network.addListener('networkStatusChange', (status) => {
+        console.log('[NativeBridge] Network:', status.connected ? 'online' : 'offline');
+        if (!status.connected) {
+          this.showOfflineFallback();
+        } else {
+          this.hideOfflineFallback();
+        }
+      });
+
+      // Handle app URL open (deep links)
+      App.addListener('appUrlOpen', (data) => {
+        console.log('[NativeBridge] Deep link:', data.url);
+      });
+
+      // Resume refresh
+      App.addListener('appStateChange', ({ isActive }) => {
+        if (isActive && state.allListings.length > 0) {
+          // Soft refresh on resume
+          fetchListings().then(() => applyFilters());
+        }
+      });
+
+      // Set up push notifications
+      await this.setupPush(PushNotifications);
+
+      // Hide splash after init
+      SplashScreen.hide();
+
+    } catch (err) {
+      console.warn('[NativeBridge] Plugin init error:', err);
+    }
+  },
+
+  // --- Push Notifications ---
+  async setupPush(PushNotifications) {
+    const permResult = await PushNotifications.requestPermissions();
+    if (permResult.receive !== 'granted') {
+      console.log('[NativeBridge] Push permission denied');
+      return;
+    }
+
+    await PushNotifications.register();
+
+    PushNotifications.addListener('registration', async (token) => {
+      console.log('[NativeBridge] Push token:', token.value.substring(0, 12) + '...');
+      // Register with backend
+      try {
+        await fetch(`/api/register-device?token=${encodeURIComponent(token.value)}&platform=ios&alerts_enabled=true`, {
+          method: 'POST'
+        });
+      } catch (err) {
+        console.warn('[NativeBridge] Device registration failed:', err);
+      }
+    });
+
+    PushNotifications.addListener('registrationError', (err) => {
+      console.error('[NativeBridge] Push registration error:', err);
+    });
+
+    PushNotifications.addListener('pushNotificationReceived', (notification) => {
+      console.log('[NativeBridge] Push received:', notification.title);
+      // Refresh listings when we get a price drop alert
+      if (notification.data?.type === 'price_drop') {
+        fetchListings().then(() => applyFilters());
+      }
+    });
+
+    PushNotifications.addListener('pushNotificationActionPerformed', (action) => {
+      const data = action.notification.data;
+      if (data?.listing_id) {
+        // Scroll to or highlight the listing
+        const card = document.querySelector(`[data-listing-id="${data.listing_id}"]`);
+        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  },
+
+  // --- Native Share ---
+  async shareListing(listing) {
+    if (!this.isNative || !this._plugins.Share) return false;
+    try {
+      await this._plugins.Share.share({
+        title: listing.title,
+        text: `${listing.title} - $${Number(listing.price).toLocaleString()} | ${listing.fsd_status}`,
+        url: listing.url,
+        dialogTitle: 'Share this Tesla listing'
+      });
+      return true;
+    } catch (err) {
+      if (err.message !== 'Share canceled') console.warn('[NativeBridge] Share error:', err);
+      return false;
+    }
+  },
+
+  // --- Haptics ---
+  async hapticImpact(style = 'medium') {
+    if (!this.isNative || !this._plugins.Haptics) return;
+    const styleMap = {
+      light: this._plugins.ImpactStyle?.Light,
+      medium: this._plugins.ImpactStyle?.Medium,
+      heavy: this._plugins.ImpactStyle?.Heavy,
+    };
+    try {
+      await this._plugins.Haptics.impact({ style: styleMap[style] || styleMap.medium });
+    } catch {}
+  },
+
+  async hapticNotification(type = 'success') {
+    if (!this.isNative || !this._plugins.Haptics) return;
+    try {
+      await this._plugins.Haptics.notification({ type });
+    } catch {}
+  },
+
+  // --- Badge ---
+  async setBadge(count) {
+    if (!this.isNative || !this._plugins.Badge) return;
+    try {
+      if (count > 0) {
+        await this._plugins.Badge.set({ count });
+      } else {
+        await this._plugins.Badge.clear();
+      }
+    } catch {}
+  },
+
+  // --- Offline Fallback ---
+  showOfflineFallback() {
+    let overlay = document.getElementById('nativeOfflineOverlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.id = 'nativeOfflineOverlay';
+      overlay.innerHTML = `
+        <div class="native-offline-content">
+          <div style="font-size:3rem">&#9889;</div>
+          <h2>You're Offline</h2>
+          <p>Showing cached listings. New data will load when you reconnect.</p>
+        </div>`;
+      overlay.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:9999;background:#dc3545;color:#fff;text-align:center;padding:12px;font-size:14px;';
+      overlay.querySelector('.native-offline-content').style.cssText = 'max-width:600px;margin:0 auto;';
+      document.body.prepend(overlay);
+    }
+    overlay.style.display = 'block';
+  },
+
+  hideOfflineFallback() {
+    const overlay = document.getElementById('nativeOfflineOverlay');
+    if (overlay) overlay.style.display = 'none';
+  },
+};
+
+// ---------------------------------------------------------------------------
 // Init
 // ---------------------------------------------------------------------------
 async function init() {
@@ -903,12 +1092,27 @@ async function init() {
   initFsdBanner();
   loadWatchlist();
 
+  // Initialize native bridge if on iOS
+  await NativeBridge.init();
+
   const [listings, stats] = await Promise.all([fetchListings(), fetchStats()]);
 
   hideLoading();
 
   if (stats) updateStats(stats);
   applyFilters();
+
+  // Update badge with alert count on native
+  if (state.isNative) {
+    try {
+      const alertRes = await fetch('/api/alerts?limit=10');
+      if (alertRes.ok) {
+        const alertData = await alertRes.json();
+        const unread = (alertData.alerts || []).filter(a => !a.seen).length;
+        NativeBridge.setBadge(unread);
+      }
+    } catch {}
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -1001,6 +1205,15 @@ function bindEvents() {
       e.preventDefault();
       toggleWatch(unwatchBtn.dataset.id);
       renderWatchlist();
+      return;
+    }
+    // Native share button
+    const shareBtn = e.target.closest('[data-action="share"]');
+    if (shareBtn && state.isNative) {
+      e.preventDefault();
+      e.stopPropagation();
+      const listing = state.allListings.find(l => l.id === shareBtn.dataset.id);
+      if (listing) NativeBridge.shareListing(listing);
       return;
     }
   });
