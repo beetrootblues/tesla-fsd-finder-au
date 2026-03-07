@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Find underpriced Teslas with Full Self-Driving (FSD) capability in Australia. Search Drive, Gumtree, and AutoTrader listings." />
-  <title>Tesla FSD Finder Australia</title>
+  <meta name="description" content="Find underpriced Teslas with Full Self-Driving (FSD) capability in Australia. Search Carsales, Drive, Gumtree, AutoTrader, CarsGuide, Pickles and more." />
+  <title>Tesla FSD Finder Australia v1.2</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,13 +18,31 @@
   <!-- Leaflet 1.9.4 -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
   <!-- App Stylesheet -->
   <link rel="stylesheet" href="/static/style.css" />
 
-  <!-- Favicon (inline SVG as data URI) -->
+  <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23e82127'/><text x='16' y='23' font-family='Arial' font-size='18' font-weight='bold' fill='white' text-anchor='middle'>T</text></svg>" />
 </head>
 <body>
+
+  <!-- ===== FSD DEADLINE BANNER ===== -->
+  <div class="fsd-banner" id="fsdBanner">
+    <div class="fsd-banner-inner">
+      <i class="bi bi-exclamation-triangle-fill"></i>
+      <span class="fsd-banner-text">
+        <strong>FSD One-Time Purchase Ending!</strong>
+        After March 31, 2026 FSD goes subscription-only ($149/mo).
+        <span class="fsd-countdown" id="fsdCountdown"></span>
+      </span>
+      <button class="fsd-banner-close" id="fsdBannerClose" aria-label="Close banner">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+  </div>
 
   <!-- ===== HEADER ===== -->
   <header class="app-header" id="appHeader">
@@ -48,320 +66,320 @@
       </div>
 
       <div class="header-center">
-        <div class="view-toggle" role="tablist">
-          <button class="view-btn active" data-view="cards" role="tab" aria-selected="true" id="btnCards">
-            <i class="bi bi-grid-3x3-gap-fill"></i>
-            <span class="d-none d-sm-inline">Listings</span>
-          </button>
-          <button class="view-btn" data-view="map" role="tab" aria-selected="false" id="btnMap">
-            <i class="bi bi-geo-alt-fill"></i>
-            <span class="d-none d-sm-inline">Map</span>
+        <!-- Search bar -->
+        <div class="search-wrapper">
+          <i class="bi bi-search search-icon"></i>
+          <input type="text" class="search-input" id="searchInput" placeholder="Search listings..." autocomplete="off" />
+          <button class="search-clear d-none" id="searchClear" aria-label="Clear search">
+            <i class="bi bi-x-circle-fill"></i>
           </button>
         </div>
       </div>
 
       <div class="header-right">
-        <div class="stats-bar" id="statsBar">
-          <div class="stat-item">
+        <div class="header-stats d-none d-md-flex">
+          <div class="stat-chip">
             <span class="stat-value" id="statTotal">--</span>
             <span class="stat-label">Listings</span>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
+          <div class="stat-chip stat-fsd">
             <span class="stat-value" id="statConfirmed">--</span>
-            <span class="stat-label">FSD Confirmed</span>
+            <span class="stat-label">FSD</span>
           </div>
-          <div class="stat-divider d-none d-md-block"></div>
-          <div class="stat-item d-none d-md-flex">
+          <div class="stat-chip stat-hw4">
             <span class="stat-value" id="statHW4">--</span>
             <span class="stat-label">HW4</span>
           </div>
+          <div class="stat-chip stat-drops">
+            <span class="stat-value" id="statDrops">--</span>
+            <span class="stat-label">Drops</span>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Update bar -->
-    <div class="update-bar">
-      <div class="update-bar-inner">
-        <span class="update-text" id="lastUpdated">
-          <i class="bi bi-arrow-repeat"></i> Checking for updates...
-        </span>
-        <span class="update-text showing-count" id="showingCount"></span>
+        <button class="btn-icon" id="themeToggle" aria-label="Toggle theme">
+          <i class="bi bi-moon-fill" id="themeIcon"></i>
+        </button>
+        <button class="btn-icon" id="btnRefresh" aria-label="Refresh data" title="Trigger re-scrape">
+          <i class="bi bi-arrow-clockwise"></i>
+        </button>
+        <span class="last-updated d-none d-lg-inline" id="lastUpdated"></span>
       </div>
     </div>
   </header>
 
-  <!-- ===== SIDEBAR OVERLAY (mobile) ===== -->
-  <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
   <!-- ===== MAIN LAYOUT ===== -->
-  <div class="app-layout">
+  <div class="app-body">
+    <!-- Sidebar overlay (mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-    <!-- ===== SIDEBAR ===== -->
+    <!-- ===== SIDEBAR FILTERS ===== -->
     <aside class="sidebar" id="sidebar">
-      <div class="sidebar-header d-lg-none">
+      <div class="sidebar-header">
         <h2 class="sidebar-title">Filters</h2>
-        <button class="sidebar-close" id="sidebarClose" aria-label="Close filters">
+        <button class="sidebar-close d-lg-none" id="sidebarClose" aria-label="Close filters">
           <i class="bi bi-x-lg"></i>
         </button>
       </div>
 
       <div class="sidebar-body">
-
-        <!-- Model Filter -->
+        <!-- Source filter pills -->
         <div class="filter-group">
-          <h3 class="filter-title">
-            <i class="bi bi-car-front-fill"></i> Model
-          </h3>
-          <div class="filter-options" id="filterModel">
-            <label class="filter-check">
-              <input type="checkbox" value="Model 3" checked />
-              <span class="check-custom"></span>
-              <span class="check-label">Model 3</span>
-            </label>
-            <label class="filter-check">
-              <input type="checkbox" value="Model Y" checked />
-              <span class="check-custom"></span>
-              <span class="check-label">Model Y</span>
-            </label>
-            <label class="filter-check">
-              <input type="checkbox" value="Model S" checked />
-              <span class="check-custom"></span>
-              <span class="check-label">Model S</span>
-            </label>
-            <label class="filter-check">
-              <input type="checkbox" value="Model X" checked />
-              <span class="check-custom"></span>
-              <span class="check-label">Model X</span>
-            </label>
-            <label class="filter-check">
-              <input type="checkbox" value="Cybertruck" checked />
-              <span class="check-custom"></span>
-              <span class="check-label">Cybertruck</span>
-            </label>
+          <label class="filter-label">Source</label>
+          <div class="source-pills" id="filterSource">
+            <button class="source-pill active" data-source="all">All</button>
+            <button class="source-pill pill-carsales" data-source="carsales">Carsales</button>
+            <button class="source-pill pill-drive" data-source="drive">Drive</button>
+            <button class="source-pill pill-autotrader" data-source="autotrader">AutoTrader</button>
+            <button class="source-pill pill-gumtree" data-source="gumtree">Gumtree</button>
+            <button class="source-pill pill-carsguide" data-source="carsguide">CarsGuide</button>
+            <button class="source-pill pill-pickles" data-source="pickles">Pickles</button>
+            <button class="source-pill pill-facebook" data-source="facebook">Facebook</button>
           </div>
         </div>
 
-        <!-- State Filter -->
+        <!-- Model -->
         <div class="filter-group">
-          <h3 class="filter-title">
-            <i class="bi bi-geo-fill"></i> State
-          </h3>
-          <div class="filter-options filter-grid" id="filterState">
-            <label class="filter-check">
-              <input type="checkbox" value="NSW" checked />
-              <span class="check-custom"></span>
-              <span class="check-label">NSW</span>
-            </label>
-            <label class="filter-check">
-              <input type="checkbox" value="VIC" checked />
-              <span class="check-custom"></span>
-              <span class="check-label">VIC</span>
-            </label>
-            <label class="filter-check">
-              <input type="checkbox" value="QLD" checked />
-              <span class="check-custom"></span>
-              <span class="check-label">QLD</span>
-            </label>
-            <label class="filter-check">
-              <input type="checkbox" value="SA" checked />
-              <span class="check-custom"></span>
-              <span class="check-label">SA</span>
-            </label>
-            <label class="filter-check">
-              <input type="checkbox" value="WA" checked />
-              <span class="check-custom"></span>
-              <span class="check-label">WA</span>
-            </label>
-            <label class="filter-check">
-              <input type="checkbox" value="TAS" checked />
-              <span class="check-custom"></span>
-              <span class="check-label">TAS</span>
-            </label>
-            <label class="filter-check">
-              <input type="checkbox" value="NT" checked />
-              <span class="check-custom"></span>
-              <span class="check-label">NT</span>
-            </label>
-            <label class="filter-check">
-              <input type="checkbox" value="ACT" checked />
-              <span class="check-custom"></span>
-              <span class="check-label">ACT</span>
-            </label>
+          <label class="filter-label">Model</label>
+          <div class="checkbox-group" id="filterModel">
+            <label class="check-item"><input type="checkbox" value="Model 3" checked /> Model 3</label>
+            <label class="check-item"><input type="checkbox" value="Model Y" checked /> Model Y</label>
+            <label class="check-item"><input type="checkbox" value="Model S" checked /> Model S</label>
+            <label class="check-item"><input type="checkbox" value="Model X" checked /> Model X</label>
+            <label class="check-item"><input type="checkbox" value="Cybertruck" checked /> Cybertruck</label>
           </div>
         </div>
 
-        <!-- Price Range -->
+        <!-- State -->
         <div class="filter-group">
-          <h3 class="filter-title">
-            <i class="bi bi-currency-dollar"></i> Price Range
-          </h3>
-          <div class="filter-row">
-            <select class="filter-select" id="filterMinPrice">
-              <option value="">Min</option>
-              <option value="0">$0</option>
-              <option value="10000">$10,000</option>
-              <option value="20000">$20,000</option>
-              <option value="30000">$30,000</option>
-              <option value="40000">$40,000</option>
-              <option value="50000">$50,000</option>
-              <option value="60000">$60,000</option>
-              <option value="70000">$70,000</option>
-              <option value="80000">$80,000</option>
-              <option value="90000">$90,000</option>
-              <option value="100000">$100,000</option>
-              <option value="120000">$120,000</option>
-              <option value="150000">$150,000</option>
-              <option value="200000">$200,000</option>
-            </select>
-            <span class="filter-sep">-</span>
-            <select class="filter-select" id="filterMaxPrice">
-              <option value="">Max</option>
-              <option value="20000">$20,000</option>
-              <option value="30000">$30,000</option>
-              <option value="40000">$40,000</option>
-              <option value="50000">$50,000</option>
-              <option value="60000">$60,000</option>
-              <option value="70000">$70,000</option>
-              <option value="80000">$80,000</option>
-              <option value="90000">$90,000</option>
-              <option value="100000">$100,000</option>
-              <option value="120000">$120,000</option>
-              <option value="150000">$150,000</option>
-              <option value="200000">$200,000</option>
-            </select>
+          <label class="filter-label">State</label>
+          <div class="checkbox-group" id="filterState">
+            <label class="check-item"><input type="checkbox" value="NSW" checked /> NSW</label>
+            <label class="check-item"><input type="checkbox" value="VIC" checked /> VIC</label>
+            <label class="check-item"><input type="checkbox" value="QLD" checked /> QLD</label>
+            <label class="check-item"><input type="checkbox" value="WA" checked /> WA</label>
+            <label class="check-item"><input type="checkbox" value="SA" checked /> SA</label>
+            <label class="check-item"><input type="checkbox" value="TAS" checked /> TAS</label>
+            <label class="check-item"><input type="checkbox" value="ACT" checked /> ACT</label>
+            <label class="check-item"><input type="checkbox" value="NT" checked /> NT</label>
+          </div>
+        </div>
+
+        <!-- FSD Status -->
+        <div class="filter-group">
+          <label class="filter-label">FSD Status</label>
+          <div class="checkbox-group" id="filterFSD">
+            <label class="check-item"><input type="checkbox" value="confirmed" checked /> Confirmed</label>
+            <label class="check-item"><input type="checkbox" value="likely" checked /> Likely (EAP)</label>
+            <label class="check-item"><input type="checkbox" value="possible" checked /> Possible</label>
+            <label class="check-item"><input type="checkbox" value="none" checked /> Standard</label>
+          </div>
+        </div>
+
+        <!-- Seller Type -->
+        <div class="filter-group">
+          <label class="filter-label">Seller Type</label>
+          <div class="checkbox-group" id="filterSellerType">
+            <label class="check-item"><input type="checkbox" value="Dealer" checked /> Dealer</label>
+            <label class="check-item"><input type="checkbox" value="Private" checked /> Private</label>
+            <label class="check-item"><input type="checkbox" value="Auction" checked /> Auction</label>
+          </div>
+        </div>
+
+        <!-- Year range -->
+        <div class="filter-group">
+          <label class="filter-label">Year</label>
+          <div class="range-inputs">
+            <input type="number" class="form-control form-control-sm" id="filterYearMin" placeholder="Min" min="2012" max="2026" />
+            <span class="range-sep">-</span>
+            <input type="number" class="form-control form-control-sm" id="filterYearMax" placeholder="Max" min="2012" max="2026" />
+          </div>
+        </div>
+
+        <!-- Price range -->
+        <div class="filter-group">
+          <label class="filter-label">Price Range</label>
+          <div class="range-inputs">
+            <input type="number" class="form-control form-control-sm" id="filterMinPrice" placeholder="Min $" step="1000" />
+            <span class="range-sep">-</span>
+            <input type="number" class="form-control form-control-sm" id="filterMaxPrice" placeholder="Max $" step="1000" />
           </div>
         </div>
 
         <!-- Max KM -->
         <div class="filter-group">
-          <h3 class="filter-title">
-            <i class="bi bi-speedometer2"></i> Max Kilometres
-          </h3>
-          <select class="filter-select full-width" id="filterMaxKm">
-            <option value="">Any</option>
-            <option value="10000">10,000 km</option>
-            <option value="25000">25,000 km</option>
-            <option value="50000">50,000 km</option>
-            <option value="75000">75,000 km</option>
-            <option value="100000">100,000 km</option>
-            <option value="150000">150,000 km</option>
-            <option value="200000">200,000 km</option>
-          </select>
+          <label class="filter-label">Max Kilometres</label>
+          <input type="number" class="form-control form-control-sm" id="filterMaxKm" placeholder="e.g. 50000" step="5000" />
         </div>
 
-        <!-- FSD Status -->
+        <!-- Special filters -->
         <div class="filter-group">
-          <h3 class="filter-title">
-            <i class="bi bi-shield-check"></i> FSD Status
-          </h3>
-          <div class="filter-options" id="filterFSD">
-            <label class="filter-check">
-              <input type="checkbox" value="confirmed" checked />
-              <span class="check-custom check-confirmed"></span>
-              <span class="check-label"><span class="status-dot confirmed"></span>Confirmed</span>
-            </label>
-            <label class="filter-check">
-              <input type="checkbox" value="likely" checked />
-              <span class="check-custom check-likely"></span>
-              <span class="check-label"><span class="status-dot likely"></span>Likely</span>
-            </label>
-            <label class="filter-check">
-              <input type="checkbox" value="possible" checked />
-              <span class="check-custom check-possible"></span>
-              <span class="check-label"><span class="status-dot possible"></span>Possible</span>
-            </label>
+          <label class="filter-label">Special</label>
+          <div class="checkbox-group">
+            <label class="check-item"><input type="checkbox" id="filterHasImages" /> Has Images Only</label>
+            <label class="check-item"><input type="checkbox" id="filterPriceDrops" /> Price Drops Only</label>
           </div>
         </div>
 
         <!-- Sort -->
         <div class="filter-group">
-          <h3 class="filter-title">
-            <i class="bi bi-sort-down"></i> Sort By
-          </h3>
-          <select class="filter-select full-width" id="filterSort">
-            <option value="newest">Newest Found</option>
+          <label class="filter-label">Sort By</label>
+          <select class="form-select form-select-sm" id="filterSort">
+            <option value="newest">Newest First</option>
             <option value="price_asc">Price: Low to High</option>
             <option value="price_desc">Price: High to Low</option>
-            <option value="km_asc">Lowest Kilometres</option>
-            <option value="year_desc">Newest Year</option>
+            <option value="km_asc">Kilometres: Low to High</option>
+            <option value="year_desc">Year: Newest First</option>
+            <option value="drops">Biggest Price Drops</option>
           </select>
         </div>
 
-        <!-- Action Buttons -->
+        <!-- Action buttons -->
         <div class="filter-actions">
-          <button class="btn-apply" id="btnApply">
-            <i class="bi bi-funnel-fill"></i> Apply Filters
-          </button>
-          <button class="btn-reset" id="btnReset">
-            <i class="bi bi-arrow-counterclockwise"></i> Reset All
+          <button class="btn btn-sm btn-outline-secondary w-100" id="btnReset">
+            <i class="bi bi-arrow-counterclockwise"></i> Reset Filters
           </button>
         </div>
       </div>
     </aside>
 
-    <!-- ===== MAIN CONTENT ===== -->
-    <main class="main-content" id="mainContent">
-
-      <!-- Loading State -->
-      <div class="loading-state" id="loadingState">
-        <div class="loader">
-          <div class="loader-ring"></div>
-          <div class="loader-icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-              <path d="M16 6C12.5 6 9.5 7.2 9.5 7.2L11 10.5C11 10.5 13 9.5 16 9.5C19 9.5 21 10.5 21 10.5L22.5 7.2C22.5 7.2 19.5 6 16 6ZM16 11C14.5 11 13.5 11.3 13.5 11.3L16 26L18.5 11.3C18.5 11.3 17.5 11 16 11Z" fill="#e82127"/>
-            </svg>
+    <!-- ===== CONTENT ===== -->
+    <main class="content">
+      <!-- View toggle & count bar -->
+      <div class="content-toolbar">
+        <div class="toolbar-left">
+          <span class="showing-count" id="showingCount">Loading...</span>
+        </div>
+        <div class="toolbar-center">
+          <!-- Source badges summary (scrollable) -->
+          <div class="source-badges d-none d-md-flex" id="sourceBadges"></div>
+        </div>
+        <div class="toolbar-right">
+          <div class="view-toggle" role="group" aria-label="View mode">
+            <button class="view-btn active" id="btnCards" data-view="cards" title="Card view">
+              <i class="bi bi-grid-3x3-gap-fill"></i>
+            </button>
+            <button class="view-btn" id="btnTable" data-view="table" title="Table view">
+              <i class="bi bi-list-ul"></i>
+            </button>
+            <button class="view-btn" id="btnMap" data-view="map" title="Map view">
+              <i class="bi bi-geo-alt-fill"></i>
+            </button>
           </div>
+          <button class="btn-icon ms-2" id="btnCompare" title="Compare selected" disabled>
+            <i class="bi bi-columns-gap"></i>
+            <span class="compare-badge d-none" id="compareBadge">0</span>
+          </button>
+          <button class="btn-icon ms-2" id="btnWatchlist" title="Watchlist">
+            <i class="bi bi-heart"></i>
+            <span class="watchlist-badge d-none" id="watchlistBadge">0</span>
+          </button>
         </div>
-        <p class="loading-text">Scanning Australian listings...</p>
-        <p class="loading-sub">Checking Drive, Gumtree & AutoTrader</p>
       </div>
 
-      <!-- Empty State -->
-      <div class="empty-state hidden" id="emptyState">
-        <div class="empty-icon">
-          <i class="bi bi-search"></i>
-        </div>
-        <h2 class="empty-title">No FSD Listings Found</h2>
-        <p class="empty-text">
-          No listings match your current filters.<br />
-          Try adjusting your criteria or check back later &mdash; we scan every 6 hours.
-        </p>
-        <button class="btn-apply" id="btnResetEmpty">
-          <i class="bi bi-arrow-counterclockwise"></i> Reset Filters
-        </button>
+      <!-- Loading state -->
+      <div class="state-message" id="loadingState">
+        <div class="spinner-border text-danger" role="status"></div>
+        <p>Loading Tesla listings across Australia...</p>
       </div>
 
-      <!-- Card Grid View -->
-      <div class="card-grid hidden" id="cardGrid"></div>
+      <!-- Empty state -->
+      <div class="state-message d-none" id="emptyState">
+        <i class="bi bi-search" style="font-size:3rem;opacity:.3"></i>
+        <p>No listings match your filters. Try adjusting your criteria.</p>
+      </div>
 
-      <!-- Map View -->
-      <div class="map-container hidden" id="mapContainer">
+      <!-- Card grid -->
+      <div class="card-grid d-none" id="cardGrid"></div>
+
+      <!-- Table view -->
+      <div class="table-wrapper d-none" id="tableWrapper">
+        <table class="listing-table">
+          <thead>
+            <tr>
+              <th class="th-sortable" data-sort="title">Vehicle</th>
+              <th class="th-sortable" data-sort="price_asc">Price</th>
+              <th class="th-sortable" data-sort="year_desc">Year</th>
+              <th class="th-sortable" data-sort="km_asc">KMs</th>
+              <th>FSD</th>
+              <th>Source</th>
+              <th>State</th>
+              <th>Seller</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+
+      <!-- Map view -->
+      <div class="map-container d-none" id="mapContainer">
         <div id="listingMap" class="listing-map"></div>
       </div>
 
+      <!-- Compare modal -->
+      <div class="compare-panel d-none" id="comparePanel">
+        <div class="compare-header">
+          <h3>Compare Listings</h3>
+          <button class="btn-icon" id="compareClose"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="compare-body" id="compareBody"></div>
+      </div>
+
+      <!-- Watchlist panel -->
+      <div class="watchlist-panel d-none" id="watchlistPanel">
+        <div class="watchlist-header">
+          <h3><i class="bi bi-heart-fill"></i> Watchlist</h3>
+          <button class="btn-icon" id="watchlistClose"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="watchlist-body" id="watchlistBody"></div>
+      </div>
+
+      <!-- Stats dashboard -->
+      <div class="stats-dashboard d-none" id="statsDashboard">
+        <div class="stats-grid">
+          <div class="stats-card">
+            <h4>Listings by Source</h4>
+            <canvas id="chartSources"></canvas>
+          </div>
+          <div class="stats-card">
+            <h4>Price Distribution</h4>
+            <canvas id="chartPrices"></canvas>
+          </div>
+          <div class="stats-card">
+            <h4>Models Breakdown</h4>
+            <canvas id="chartModels"></canvas>
+          </div>
+          <div class="stats-card">
+            <h4>By State</h4>
+            <canvas id="chartStates"></canvas>
+          </div>
+        </div>
+      </div>
     </main>
   </div>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="app-footer" id="appFooter">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <svg width="18" height="18" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="6" fill="#e82127"/>
-          <path d="M16 6C12.5 6 9.5 7.2 9.5 7.2L11 10.5C11 10.5 13 9.5 16 9.5C19 9.5 21 10.5 21 10.5L22.5 7.2C22.5 7.2 19.5 6 16 6ZM16 11C14.5 11 13.5 11.3 13.5 11.3L16 26L18.5 11.3C18.5 11.3 17.5 11 16 11Z" fill="white"/>
-        </svg>
-        Tesla FSD Finder Australia &mdash; Research Project
-      </div>
-      <p class="footer-sources">
-        Data sourced from
-        <a href="https://www.drive.com.au" target="_blank" rel="noopener">Drive.com.au</a>,
-        <a href="https://www.gumtree.com.au" target="_blank" rel="noopener">Gumtree.com.au</a>, and
-        <a href="https://www.autotrader.com.au" target="_blank" rel="noopener">AutoTrader.com.au</a>
-      </p>
-      <p class="footer-disclaimer">Not affiliated with Tesla, Inc.</p>
-    </div>
-  </footer>
+  <!-- ===== MOBILE BOTTOM NAV ===== -->
+  <nav class="mobile-nav d-lg-none" id="mobileNav">
+    <button class="mobile-nav-item active" data-action="listings">
+      <i class="bi bi-car-front-fill"></i>
+      <span>Listings</span>
+    </button>
+    <button class="mobile-nav-item" data-action="filters">
+      <i class="bi bi-sliders"></i>
+      <span>Filters</span>
+    </button>
+    <button class="mobile-nav-item" data-action="map">
+      <i class="bi bi-geo-alt"></i>
+      <span>Map</span>
+    </button>
+    <button class="mobile-nav-item" data-action="watchlist">
+      <i class="bi bi-heart"></i>
+      <span>Saved</span>
+    </button>
+    <button class="mobile-nav-item" data-action="stats">
+      <i class="bi bi-bar-chart"></i>
+      <span>Stats</span>
+    </button>
+  </nav>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
