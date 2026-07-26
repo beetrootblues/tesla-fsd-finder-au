@@ -12,20 +12,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        // Register for push notifications
         registerForPushNotifications(application)
-        
-        // Set up appearance
         configureAppearance()
-        
         return true
     }
-    
+
+    func applicationWillResignActive(_ application: UIApplication) {
+        // Sent when the application is about to move from active to inactive state.
+    }
+
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        // Use this method to release shared resources, save user data, invalidate timers.
+    }
+
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        // Called as part of the transition from the background to the active state.
+    }
+
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        // Restart any tasks that were paused while the application was inactive.
+    }
+
+    func applicationWillTerminate(_ application: UIApplication) {
+        // Called when the application is about to terminate.
+    }
+
+    // Required by @capacitor/app for URL-open / deep-link handling. The
+    // uploaded custom AppDelegate had dropped this -- without it, any
+    // Capacitor plugin relying on url-open callbacks silently breaks.
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+        return ApplicationDelegateProxy.shared.application(app, open: url, options: options)
+    }
+
+    // Required by @capacitor/app for Universal Links. Also dropped in the
+    // uploaded custom AppDelegate.
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        return ApplicationDelegateProxy.shared.application(application, continue: userActivity, restorationHandler: restorationHandler)
+    }
+
     // MARK: - Push Notifications
-    
+
     private func registerForPushNotifications(_ application: UIApplication) {
         UNUserNotificationCenter.current().delegate = self
-        
+
         UNUserNotificationCenter.current().requestAuthorization(
             options: [.alert, .badge, .sound]
         ) { granted, error in
@@ -42,18 +71,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-    
+
     func application(
         _ application: UIApplication,
         didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
     ) {
-        // Forward token to Capacitor Push Notifications plugin
         NotificationCenter.default.post(
             name: .capacitorDidRegisterForRemoteNotifications,
             object: deviceToken
         )
     }
-    
+
     func application(
         _ application: UIApplication,
         didFailToRegisterForRemoteNotificationsWithError error: Error
@@ -63,19 +91,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             object: error
         )
     }
-    
+
     // MARK: - Biometric Authentication
-    
+
     static func authenticateWithBiometrics(completion: @escaping (Bool, String?) -> Void) {
         let context = LAContext()
         var error: NSError?
-        
+
         guard context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
             // Biometrics not available - allow access (don't lock users out)
             completion(true, nil)
             return
         }
-        
+
         context.evaluatePolicy(
             .deviceOwnerAuthenticationWithBiometrics,
             localizedReason: "Unlock Tesla FSD Finder"
@@ -89,16 +117,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-    
+
     // MARK: - Appearance
-    
+
     private func configureAppearance() {
-        // Force dark mode to match app theme
         if #available(iOS 13.0, *) {
             window?.overrideUserInterfaceStyle = .dark
         }
-        
-        // Navigation bar appearance
+
         let navAppearance = UINavigationBarAppearance()
         navAppearance.configureWithOpaqueBackground()
         navAppearance.backgroundColor = UIColor(red: 0.04, green: 0.055, blue: 0.102, alpha: 1.0) // #0a0e1a
@@ -111,32 +137,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 // MARK: - UNUserNotificationCenterDelegate
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
-    
-    // Handle notification when app is in foreground
+
     func userNotificationCenter(
         _ center: UNUserNotificationCenter,
         willPresent notification: UNNotification,
         withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
     ) {
-        // Show banner + badge + sound even when app is open
         completionHandler([.banner, .badge, .sound])
     }
-    
-    // Handle notification tap
+
     func userNotificationCenter(
         _ center: UNUserNotificationCenter,
         didReceive response: UNNotificationResponse,
         withCompletionHandler completionHandler: @escaping () -> Void
     ) {
         let userInfo = response.notification.request.content.userInfo
-        
-        // Forward to Capacitor for JS handling
         NotificationCenter.default.post(
             name: NSNotification.Name("capacitorDidReceiveRemoteNotification"),
             object: nil,
             userInfo: userInfo
         )
-        
         completionHandler()
     }
 }

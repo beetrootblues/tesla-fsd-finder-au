@@ -131,6 +131,26 @@ function fsdLabel(status) {
   return map[status] || 'Standard';
 }
 
+// v2.0: fsd_transfer is the field that actually matters for a buyer --
+// purchased-outright FSD is VIN-locked and transfers on private sale, an
+// active subscription does not. fsd_status (above) is kept only so
+// existing filters/CSV export don't break.
+function transferLabel(fsdTransfer) {
+  const map = {
+    purchased_outright: 'FSD owned (transfers)',
+    subscription_active: 'FSD sub only (won\u2019t transfer)',
+    mentioned_unclear: 'FSD mentioned \u2013 ask seller',
+    none: null,
+  };
+  return map[fsdTransfer] ?? null;
+}
+
+function transferBadgeClass(fsdTransfer) {
+  if (fsdTransfer === 'purchased_outright') return 'badge-fsd-owned';
+  if (fsdTransfer === 'subscription_active') return 'badge-fsd-subonly';
+  return 'badge-fsd-possible';
+}
+
 function fsdIcon(status) {
   const map = { confirmed: 'bi-check-circle-fill', likely: 'bi-check-circle', possible: 'bi-question-circle' };
   return map[status] || 'bi-dash-circle';
@@ -375,9 +395,13 @@ function renderCards(listings) {
             <span class="badge-fsd ${fsdBadgeClass(l.fsd_status)}">
               <i class="bi ${fsdIcon(l.fsd_status)}"></i> ${fsdLabel(l.fsd_status)}
             </span>
+            ${transferLabel(l.fsd_transfer) ? `<span class="badge-fsd ${transferBadgeClass(l.fsd_transfer)}">${transferLabel(l.fsd_transfer)}</span>` : ''}
             ${l.hw_version ? `<span class="badge-hw">${l.hw_version}</span>` : ''}
+            ${l.mcu_version ? `<span class="badge-mcu">${l.mcu_version}</span>` : ''}
+            ${l.supercharging_status === 'unlimited_transferable_claimed' ? `<span class="badge-usc"><i class="bi bi-lightning-charge-fill"></i> Unlimited SC claimed</span>` : ''}
             ${l.seller_type ? `<span class="badge-seller badge-seller-${l.seller_type.toLowerCase()}">${l.seller_type}</span>` : ''}
           </div>
+          ${(l.classification_warnings && l.classification_warnings.length) ? `<div class="card-warning"><i class="bi bi-exclamation-triangle-fill"></i><span>${escapeHtml(l.classification_warnings.join(' \u00b7 '))}</span></div>` : ''}
           <div class="card-actions">
             <a href="${escapeHtml(l.source_url)}" target="_blank" rel="noopener" class="btn-view">
               View on ${escapeHtml(l.source)} <i class="bi bi-box-arrow-up-right"></i>
@@ -922,7 +946,7 @@ const NativeBridge = {
       const { PushNotifications } = await import('@capacitor/push-notifications');
       const { Share } = await import('@capacitor/share');
       const { Haptics, ImpactStyle } = await import('@capacitor/haptics');
-      const { Badge } = await import('@capacitor/badge');
+      const { Badge } = await import('@capawesome/capacitor-badge');
       const { Network } = await import('@capacitor/network');
       const { App } = await import('@capacitor/app');
 

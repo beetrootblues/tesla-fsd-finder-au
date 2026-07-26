@@ -127,15 +127,15 @@ npx cap run ios --target "iPhone 15 Pro Max"
 
 ### Review Guidelines Compliance
 
-This app is designed to pass **Guideline 4.2** (Minimum Functionality) by providing:
+This app aims at **Guideline 4.2** (Minimum Functionality) via:
 
-1. **Native push notifications** - Real-time price drop alerts via APNs
-2. **Biometric authentication** - Face ID / Touch ID lock
-3. **Native share sheet** - iOS share extension for listings
-4. **Haptic feedback** - Tactile responses on interactions
-5. **Offline support** - Cached watchlist available without connectivity
-6. **Network monitoring** - Native connectivity detection
-7. **App badge** - Unread alert count on home screen icon
+1. **Biometric authentication** - Face ID / Touch ID lock, fully implemented client-side
+2. **Native share sheet** - iOS share extension for listings
+3. **Haptic feedback** - Tactile responses on interactions
+4. **Offline support** - Cached watchlist available without connectivity
+5. **Network monitoring** - Native connectivity detection
+6. **App badge** - Unread alert count on home screen icon
+7. **Push notification registration** - client-side permission + APNs token registration is implemented; **actually sending a push when a price drops is not yet wired up** (see the iOS App section in README.md). Don't list this as a working feature in the App Store submission until the server-side sender exists, or Apple review may flag the mismatch between claimed and actual functionality.
 
 ### Submit for Review
 1. Archive in Xcode: **Product > Archive**

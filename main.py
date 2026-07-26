@@ -109,6 +109,16 @@ def _normalise_listing(raw: dict, index: int) -> dict:
         "fsd_keywords_found": raw.get("fsd_keywords_found", []),
         "fsd_confidence": raw.get("fsd_confidence", 0),
         "hw_version": raw.get("hw_version"),
+        # v2.0: precise classification fields (see classify.py). fsd_transfer
+        # is the important one -- "purchased_outright" transfers on private
+        # sale, "subscription_active" does not, regardless of fsd_status.
+        "mcu_version": raw.get("mcu_version"),
+        "fsd_transfer": raw.get("fsd_transfer", "none"),
+        "supercharging_status": raw.get("supercharging_status", "none"),
+        "classification_warnings": raw.get("warnings", []),
+        "classification": raw.get("classification"),
+        "discovery_query": raw.get("discovery_query", ""),
+        "detail_page_fetched": raw.get("detail_page_fetched", False),
         "source": source_display,
         "source_url": raw.get("source_url", ""),
         "seller_type": raw.get("seller_type", ""),

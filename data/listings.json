@@ -30,7 +30,41 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "2026-02-14T13:35:38.000Z",
     "is_active": true,
-    "price_rating": "POOR"
+    "price_rating": "POOR",
+    "mcu_version": null,
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "X",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model X'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -63,7 +97,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "2025-12-15T11:01:19.000Z",
     "is_active": true,
-    "price_rating": "GREAT"
+    "price_rating": "GREAT",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -98,7 +168,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS4NC472162",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -131,7 +237,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "2026-02-09T14:36:37.000Z",
     "is_active": true,
-    "price_rating": "GREAT"
+    "price_rating": "GREAT",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -166,7 +308,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJ3F7EA4LF725192",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -199,7 +377,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "",
     "is_active": true,
-    "price_rating": ""
+    "price_rating": "",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -232,7 +446,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "2026-03-02T16:46:06.000Z",
     "is_active": true,
-    "price_rating": null
+    "price_rating": null,
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -267,7 +517,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCEK1RC384337",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -300,7 +586,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "2026-03-02T16:46:06.000Z",
     "is_active": true,
-    "price_rating": "POOR"
+    "price_rating": "POOR",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -335,7 +657,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCELXPC749068",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -370,7 +728,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7EK3MC392701",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -403,7 +797,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "",
     "is_active": true,
-    "price_rating": ""
+    "price_rating": "",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -436,7 +866,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "2026-01-28T19:33:10.000Z",
     "is_active": true,
-    "price_rating": "FAIR"
+    "price_rating": "FAIR",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -471,7 +937,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS4PC265693",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -504,7 +1006,41 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "2026-02-09T10:46:36.000Z",
     "is_active": true,
-    "price_rating": null
+    "price_rating": null,
+    "mcu_version": null,
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "X",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model X'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -537,7 +1073,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "2026-02-09T14:36:36.000Z",
     "is_active": true,
-    "price_rating": "FAIR"
+    "price_rating": "FAIR",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -570,7 +1142,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "2026-02-14T13:35:38.000Z",
     "is_active": true,
-    "price_rating": "FAIR"
+    "price_rating": "FAIR",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -603,7 +1211,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "",
     "is_active": true,
-    "price_rating": ""
+    "price_rating": "",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -638,7 +1282,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FA5MC226170",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -671,7 +1351,41 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "2026-02-25T21:38:17.000Z",
     "is_active": true,
-    "price_rating": "GREAT"
+    "price_rating": "GREAT",
+    "mcu_version": null,
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "X",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model X'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -704,7 +1418,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "2026-02-26T13:31:37.000Z",
     "is_active": true,
-    "price_rating": "GREAT"
+    "price_rating": "GREAT",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -739,7 +1489,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS0NC708015",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -772,7 +1558,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "2026-02-27T13:31:51.000Z",
     "is_active": true,
-    "price_rating": "GOOD"
+    "price_rating": "GOOD",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -805,7 +1627,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "",
     "is_active": true,
-    "price_rating": ""
+    "price_rating": "",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -842,7 +1700,45 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7EK1PC780045",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "possible",
+        "evidence": [
+          "mentions 'Enhanced Autopilot' -- confirms at least HW2, but EAP was sold across HW2/2.5/HW3 so it doesn't pin an exact generation"
+        ]
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -875,7 +1771,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "2026-02-28T12:26:12.000Z",
     "is_active": true,
-    "price_rating": "GOOD"
+    "price_rating": "GOOD",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -908,7 +1840,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "2026-02-28T17:33:14.000Z",
     "is_active": true,
-    "price_rating": "GOOD"
+    "price_rating": "GOOD",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -941,7 +1909,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "2026-03-02T13:24:14.000Z",
     "is_active": true,
-    "price_rating": "GOOD"
+    "price_rating": "GOOD",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -974,7 +1978,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "2026-03-02T16:46:06.000Z",
     "is_active": true,
-    "price_rating": "GOOD"
+    "price_rating": "GOOD",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -1007,7 +2047,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "",
     "is_active": true,
-    "price_rating": ""
+    "price_rating": "",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1044,7 +2120,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FA5MC180906",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1079,7 +2191,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS9NC718789",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -1112,7 +2260,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "2026-03-04T11:36:05.000Z",
     "is_active": true,
-    "price_rating": "GREAT"
+    "price_rating": "GREAT",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -1145,7 +2329,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "2026-03-05T15:31:45.000Z",
     "is_active": true,
-    "price_rating": "POOR"
+    "price_rating": "POOR",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -1178,7 +2398,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "2026-03-06T17:22:43.000Z",
     "is_active": true,
-    "price_rating": "GREAT"
+    "price_rating": "GREAT",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "drive",
@@ -1211,7 +2467,43 @@
     "date_found": "2026-03-07T01:27:01Z",
     "date_listed": "",
     "is_active": true,
-    "price_rating": ""
+    "price_rating": "",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1246,7 +2538,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS9RC386741",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1281,7 +2609,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJ3F7EA8LF698109",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1316,7 +2680,41 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJSB7H17EFP64574",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": null,
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "S",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model S'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1351,7 +2749,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS1PC905682",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1389,7 +2823,41 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJSB7E14HF219151",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": null,
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "S",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model S'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1413,7 +2881,7 @@
     "has_eap": false,
     "fsd_status": "none",
     "fsd_keywords_found": [],
-    "hw_version": null,
+    "hw_version": "HW4",
     "image_url": "https://resource.autotrader.com.au/inventory/2026-02-28/95758391422771/14990065/2025_tesla_model_y_Used_1.jpg",
     "colour": "Grey",
     "body_type": "suv",
@@ -1424,7 +2892,45 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCEK8SC045810",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "HW4",
+        "confidence": "likely",
+        "evidence": [
+          "inferred from build/compliance date 2029-06"
+        ]
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1450,7 +2956,7 @@
     "fsd_keywords_found": [
       "hardware 3"
     ],
-    "hw_version": "hw3",
+    "hw_version": "HW3",
     "image_url": "https://resource.autotrader.com.au/inventory/2026-02-19/97655866741771/14974396/2024_tesla_model_y_Used_1.jpg",
     "colour": "Grey",
     "body_type": "suv",
@@ -1461,7 +2967,45 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS6RC387443",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "HW3",
+        "confidence": "confirmed",
+        "evidence": [
+          "text explicitly mentions HW3"
+        ]
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1496,7 +3040,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJ3F7EAXKF473480",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1531,7 +3111,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJ3F7EB6LF518957",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1566,7 +3182,41 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJSB7E21LF405750",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": null,
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "S",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model S'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1601,7 +3251,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCEL4PC748790",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1636,7 +3322,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7EK7MC415381",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1673,7 +3395,45 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCEL0PC743294",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "possible",
+        "evidence": [
+          "mentions 'Enhanced Autopilot' -- confirms at least HW2, but EAP was sold across HW2/2.5/HW3 so it doesn't pin an exact generation"
+        ]
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1708,7 +3468,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS0PC822669",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1743,7 +3539,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7ETXSC602118",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1778,7 +3610,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7EK2NC609544",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1804,7 +3672,7 @@
     "fsd_keywords_found": [
       "hw4"
     ],
-    "hw_version": "hw4",
+    "hw_version": "HW4",
     "image_url": "https://resource.autotrader.com.au/inventory/2026-01-14/22460658538671/14906992/2024_tesla_model_3_Used_1.jpg",
     "colour": "Blue",
     "body_type": "sedan",
@@ -1815,7 +3683,45 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS1RC148504",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "HW4",
+        "confidence": "confirmed",
+        "evidence": [
+          "text explicitly mentions HW4"
+        ]
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1852,7 +3758,45 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS3PC766056",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "possible",
+        "evidence": [
+          "mentions 'Enhanced Autopilot' -- confirms at least HW2, but EAP was sold across HW2/2.5/HW3 so it doesn't pin an exact generation"
+        ]
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1890,7 +3834,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJSB7E26JF287806",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": null,
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "S",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model S'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "possible",
+        "evidence": [
+          "mentions 'Enhanced Autopilot' -- confirms at least HW2, but EAP was sold across HW2/2.5/HW3 so it doesn't pin an exact generation"
+        ]
+      },
+      "mcu": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1925,7 +3905,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJ3F7EA9KF442785",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1960,7 +3976,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7EB5MC177501",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -1995,7 +4047,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCEK5RC364267",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2019,7 +4107,7 @@
     "has_eap": false,
     "fsd_status": "none",
     "fsd_keywords_found": [],
-    "hw_version": null,
+    "hw_version": "HW4",
     "image_url": "https://resource.autotrader.com.au/inventory/2026-02-10/25552118860771/14931984/2019_tesla_model_3_Used_1.jpg",
     "colour": "Blue",
     "body_type": "sedan",
@@ -2030,7 +4118,45 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJ3F7EB0KF488336",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "HW4",
+        "confidence": "likely",
+        "evidence": [
+          "inferred from build/compliance date 2027-09"
+        ]
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2065,7 +4191,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FA0MC226741",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2100,7 +4262,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS2NC704516",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2135,7 +4333,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS4NC718585",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2170,7 +4404,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FSXNC486123",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2205,7 +4475,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS9NC750495",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2240,7 +4546,41 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJXDCE2XHF058189",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": null,
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "X",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model X'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2275,7 +4615,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FAXMC167228",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2310,7 +4686,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7EL1NC718067",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2345,7 +4757,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS4NC703495",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2380,7 +4828,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FSXSC438309",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2415,7 +4899,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJ3F7EC2LF488624",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2450,7 +4970,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7EK0RC149645",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2487,7 +5043,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJXDCE24HF032641",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": null,
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "X",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model X'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "possible",
+        "evidence": [
+          "mentions 'Enhanced Autopilot' -- confirms at least HW2, but EAP was sold across HW2/2.5/HW3 so it doesn't pin an exact generation"
+        ]
+      },
+      "mcu": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2522,7 +5114,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCEL2PC743040",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2557,7 +5185,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FA3MC226247",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2592,7 +5256,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFJ4SC045843",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2627,7 +5327,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFSXSC946398",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2662,7 +5398,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS2PC942053",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2697,7 +5469,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCEK8RC370029",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2732,7 +5540,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FSXNC515183",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2767,7 +5611,41 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJSB7E2XJF253075",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": null,
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "S",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model S'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2802,7 +5680,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS8NC416001",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2837,7 +5751,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7EK5PC780632",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2874,7 +5824,45 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJ3F7EA0LF590180",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "possible",
+        "evidence": [
+          "mentions 'Enhanced Autopilot' -- confirms at least HW2, but EAP was sold across HW2/2.5/HW3 so it doesn't pin an exact generation"
+        ]
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2909,7 +5897,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCEK5PC203060",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2944,7 +5968,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS3NC695476",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -2968,7 +6028,7 @@
     "has_eap": false,
     "fsd_status": "none",
     "fsd_keywords_found": [],
-    "hw_version": null,
+    "hw_version": "HW4",
     "image_url": "https://resource.autotrader.com.au/inventory/2026-03-06/59262770872771/15000932/2021_tesla_model_3_Used_1.jpg",
     "colour": "Grey",
     "body_type": "sedan",
@@ -2979,7 +6039,45 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FJ6MC386915",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "HW4",
+        "confidence": "likely",
+        "evidence": [
+          "inferred from build/compliance date 2026-12"
+        ]
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3014,7 +6112,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS2NC720688",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3049,7 +6183,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS3NC704847",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3087,7 +6257,45 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCEL9PC748882",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "possible",
+        "evidence": [
+          "mentions 'Enhanced Autopilot' -- confirms at least HW2, but EAP was sold across HW2/2.5/HW3 so it doesn't pin an exact generation"
+        ]
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3122,7 +6330,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS2NC722795",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3157,7 +6401,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS4NC579941",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3192,7 +6472,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJ3F7EC7MF818162",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3227,7 +6543,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FA3MC167359",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3262,7 +6614,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS3NC703343",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3297,7 +6685,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS1NC578455",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3332,7 +6756,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS9NC717044",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3367,7 +6827,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS5NC721706",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3402,7 +6898,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS9RC164448",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3437,7 +6969,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7EC2MC382413",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3472,7 +7040,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS7NC704284",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3507,7 +7111,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS5PC988176",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3546,7 +7186,45 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS6NC483784",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "mentioned_unclear",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "mentioned_unclear",
+        "confidence": "possible",
+        "evidence": [
+          "mentions FSD without saying whether it's a one-off purchase (transfers) or a live subscription (doesn't) -- ask the seller directly and ask for the original invoice"
+        ]
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3581,7 +7259,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FA0MC180859",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3616,7 +7330,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS8NC578453",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3651,7 +7401,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS1NC703969",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3686,7 +7472,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7EKXNC485104",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3721,7 +7543,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS7SC528372",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3756,7 +7614,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FJ5MC281766",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3791,7 +7685,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS9NC400731",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3826,7 +7756,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS4NC703982",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3861,7 +7827,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS4NC749948",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3896,7 +7898,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS8PC852499",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3931,7 +7969,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS3NC704069",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -3966,7 +8040,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7EK0MC392395",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4001,7 +8111,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS0PC852593",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4036,7 +8182,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FJ1MC281747",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4071,7 +8253,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7EC0MC381938",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4106,7 +8324,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS9NC703783",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4141,7 +8395,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS4PC790423",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4176,7 +8466,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS5NC721978",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4211,7 +8537,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCEL1PC765840",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4246,7 +8608,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7EC0MC382037",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4281,7 +8679,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJ3F7EB0MF815644",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4316,7 +8750,41 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJXDCE49HF068410",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": null,
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "X",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model X'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4351,7 +8819,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCFS8PC960470",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4386,7 +8890,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS8PC893652",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4421,7 +8961,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7EL0NC610362",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4458,7 +9034,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJXDCE2XJF131065",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": null,
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "X",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model X'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "possible",
+        "evidence": [
+          "mentions 'Enhanced Autopilot' -- confirms at least HW2, but EAP was sold across HW2/2.5/HW3 so it doesn't pin an exact generation"
+        ]
+      },
+      "mcu": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4493,7 +9105,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS7NC694931",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4528,7 +9176,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FS9RC147911",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4563,7 +9247,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJSB7H11EFP47494",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "S",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model S'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "text explicitly mentions MCU2"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4598,7 +9318,41 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJXDCE27KF186901",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": null,
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "X",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model X'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4633,7 +9387,41 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJXDCE44LF290734",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": null,
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "X",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model X'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4668,7 +9456,41 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJSB7E20GF117269",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": null,
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "S",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model S'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4703,7 +9525,41 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJXDCE24MF309377",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": null,
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "X",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model X'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4738,7 +9594,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7EK2NC743177",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4773,7 +9665,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FJ9MC281463",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4808,7 +9736,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7EK0PC843099",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4843,7 +9807,41 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJXDCE26KF146700",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": null,
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "X",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model X'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4878,7 +9876,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7EB0MC164378",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4913,7 +9947,41 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJXDCE20HF039733",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": null,
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "X",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model X'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4948,7 +10016,41 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJSB7E16HF195547",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": null,
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "S",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model S'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -4983,7 +10085,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7FA8MC176090",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -5018,7 +10156,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "5YJ3F7EAXKF473740",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -5053,7 +10227,43 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRWYHCEL9PC726316",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "Y",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model Y'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   },
   {
     "source": "autotrader",
@@ -5088,6 +10298,42 @@
     "is_active": true,
     "price_rating": "",
     "vin": "LRW3F7EC4MC386835",
-    "condition": "Used"
+    "condition": "Used",
+    "mcu_version": "MCU2",
+    "fsd_transfer": "none",
+    "supercharging_status": "none",
+    "classification": {
+      "model": {
+        "value": "3",
+        "confidence": "confirmed",
+        "evidence": [
+          "title/text mentions 'Model 3'"
+        ]
+      },
+      "autopilot_hw": {
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "mcu": {
+        "value": "MCU2",
+        "confidence": "confirmed",
+        "evidence": [
+          "Model 3/Y have shipped MCU2-class hardware since launch"
+        ]
+      },
+      "fsd": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "supercharging": {
+        "value": "none",
+        "confidence": "unknown",
+        "evidence": []
+      },
+      "warnings": []
+    },
+    "warnings": []
   }
 ]

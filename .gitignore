@@ -9,3 +9,9 @@ dist/
 build/
 .pytest_cache/
 .DS_Store
+node_modules/
+ios/App/Pods/
+ios/App/build/
+*.xcuserdatad/
+*.ipa
+/tmp/

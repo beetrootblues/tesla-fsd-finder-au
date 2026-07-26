@@ -483,6 +483,23 @@ a:hover { color: var(--accent-hover); }
 .badge-seller-private { background: rgba(255,152,0,.1); color: #ffb74d; }
 .badge-seller-auction { background: rgba(96,125,139,.1); color: #90a4ae; }
 
+/* v2.0: MCU / supercharging / transfer-clarity / warning badges */
+.badge-mcu {
+  font-size: 10px; font-weight: 600; padding: 3px 6px;
+  border-radius: 4px; background: rgba(156,39,176,.12); color: #ba68c8;
+}
+.badge-usc {
+  font-size: 10px; font-weight: 600; padding: 3px 6px;
+  border-radius: 4px; background: rgba(63,185,80,.12); color: var(--success);
+}
+.badge-fsd-owned { background: rgba(63,185,80,.15); color: var(--success); }
+.badge-fsd-subonly { background: rgba(210,153,34,.15); color: var(--warning); }
+.card-warning {
+  font-size: 11px; color: var(--warning); background: rgba(210,153,34,.08);
+  border: 1px solid rgba(210,153,34,.25); border-radius: 4px;
+  padding: 4px 8px; margin-top: 6px; display: flex; gap: 6px; align-items: flex-start;
+}
+
 /* Card actions */
 .card-actions {
   display: flex; gap: 8px; align-items: center; margin-top: auto; padding-top: 8px;
