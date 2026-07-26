@@ -2881,7 +2881,7 @@
     "has_eap": false,
     "fsd_status": "none",
     "fsd_keywords_found": [],
-    "hw_version": "HW4",
+    "hw_version": null,
     "image_url": "https://resource.autotrader.com.au/inventory/2026-02-28/95758391422771/14990065/2025_tesla_model_y_Used_1.jpg",
     "colour": "Grey",
     "body_type": "suv",
@@ -2905,11 +2905,9 @@
         ]
       },
       "autopilot_hw": {
-        "value": "HW4",
-        "confidence": "likely",
-        "evidence": [
-          "inferred from build/compliance date 2029-06"
-        ]
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
       },
       "mcu": {
         "value": "MCU2",
@@ -4107,7 +4105,7 @@
     "has_eap": false,
     "fsd_status": "none",
     "fsd_keywords_found": [],
-    "hw_version": "HW4",
+    "hw_version": null,
     "image_url": "https://resource.autotrader.com.au/inventory/2026-02-10/25552118860771/14931984/2019_tesla_model_3_Used_1.jpg",
     "colour": "Blue",
     "body_type": "sedan",
@@ -4131,11 +4129,9 @@
         ]
       },
       "autopilot_hw": {
-        "value": "HW4",
-        "confidence": "likely",
-        "evidence": [
-          "inferred from build/compliance date 2027-09"
-        ]
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
       },
       "mcu": {
         "value": "MCU2",
@@ -6028,7 +6024,7 @@
     "has_eap": false,
     "fsd_status": "none",
     "fsd_keywords_found": [],
-    "hw_version": "HW4",
+    "hw_version": null,
     "image_url": "https://resource.autotrader.com.au/inventory/2026-03-06/59262770872771/15000932/2021_tesla_model_3_Used_1.jpg",
     "colour": "Grey",
     "body_type": "sedan",
@@ -6052,11 +6048,9 @@
         ]
       },
       "autopilot_hw": {
-        "value": "HW4",
-        "confidence": "likely",
-        "evidence": [
-          "inferred from build/compliance date 2026-12"
-        ]
+        "value": "unknown",
+        "confidence": "unknown",
+        "evidence": []
       },
       "mcu": {
         "value": "MCU2",

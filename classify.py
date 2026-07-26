@@ -88,16 +88,23 @@ _NUMERIC_DATE = re.compile(r"\b(0?[1-9]|1[0-2])[/\-.](20[12]\d)\b")
 
 
 def _extract_build_date(text: str) -> Optional[date]:
-    """Very forgiving date extraction: '03/2018', 'March 2018', 'compliance 04/19'."""
+    """Very forgiving date extraction: '03/2018', 'March 2018', 'compliance 04/19'.
+    Rejects anything in the future or absurdly old -- a Tesla build date can't
+    postdate today, and nothing relevant here predates 2012."""
+    today = date.today()
+
+    def _valid(d: date) -> Optional[date]:
+        return d if date(2012, 1, 1) <= d <= today else None
+
     m = _NAMED_DATE.search(text)
     if m:
         month_str = m.group(1).lower()
         idx = next((i for i, mo in enumerate(_MONTHS) if month_str.startswith(mo)), None)
         if idx is not None:
-            return date(int(m.group(2)), idx + 1, 1)
+            return _valid(date(int(m.group(2)), idx + 1, 1))
     m = _NUMERIC_DATE.search(text)
     if m:
-        return date(int(m.group(2)), int(m.group(1)), 1)
+        return _valid(date(int(m.group(2)), int(m.group(1)), 1))
     return None
 
 
