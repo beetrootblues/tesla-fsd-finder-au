@@ -1,0 +1,66 @@
+name: iOS Build (unsigned)
+
+# Produces an UNSIGNED .ipa as a downloadable workflow artifact. This is as
+# far as any CI can take this without Apple signing credentials this repo
+# doesn't have: an unsigned .ipa will NOT install on a physical iPhone as-is.
+# iOS enforces code signing at the OS level -- no amount of build tooling
+# gets around that, only an actual Apple identity (a signing certificate +
+# provisioning profile, or Apple ID-based signing) does.
+#
+# To go from this artifact to something on your phone, either:
+#   (a) Download the artifact, unzip it, and hand the .app to Sideloadly or
+#       AltStore/SideStore on your own machine -- they sign it with your own
+#       free Apple ID at install time (re-sign every 7 days on a free ID).
+#   (b) Skip CI entirely: `./scripts/build-ios.sh --open` on your Mac lets
+#       Xcode sign with your Apple ID and run straight to your phone over
+#       USB/WiFi -- fewer moving parts than round-tripping through CI.
+#   (c) Add real Apple Developer Program signing secrets (a .p12 cert +
+#       provisioning profile, or fastlane match) to this workflow, which
+#       would let CI itself produce something installable via
+#       TestFlight/ad-hoc -- a meaningfully bigger credential-sharing step
+#       than anything else in this repo, worth doing deliberately, not by
+#       default.
+on:
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+
+      - name: Sync web assets into the iOS project
+        run: npx cap sync ios
+
+      - name: Install CocoaPods
+        run: cd ios/App && pod install
+
+      - name: Archive (unsigned)
+        run: |
+          xcodebuild \
+            -workspace ios/App/App.xcworkspace \
+            -scheme App \
+            -configuration Release \
+            -sdk iphoneos \
+            -archivePath "$PWD/build/App.xcarchive" \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            archive
+
+      - name: Package unsigned .ipa
+        run: |
+          mkdir -p build/Payload
+          cp -r build/App.xcarchive/Products/Applications/App.app build/Payload/
+          cd build && zip -r TeslaFSDFinderAU-unsigned.ipa Payload
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: TeslaFSDFinderAU-unsigned-ipa
+          path: build/TeslaFSDFinderAU-unsigned.ipa
+          retention-days: 14
