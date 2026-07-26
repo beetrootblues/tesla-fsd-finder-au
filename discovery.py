@@ -43,6 +43,7 @@ from urllib.parse import urlparse
 import httpx
 
 import listing_utils
+import vin_check
 
 logger = logging.getLogger("discovery")
 logger.setLevel(logging.INFO)
@@ -175,16 +176,30 @@ async def run_discovery() -> list[dict]:
                 body_text = await _fetch_detail_text(client, url)
                 detail_fetches += 1
 
-            listings.append(
-                listing_utils.make_listing(
-                    source=site.replace(".com.au", "").capitalize(),
-                    source_url=url,
-                    title=title,
-                    snippet=snippet,
-                    body_text=body_text or "",
-                    query=query,
-                )
+            listing = listing_utils.make_listing(
+                source=site.replace(".com.au", "").capitalize(),
+                source_url=url,
+                title=title,
+                snippet=snippet,
+                body_text=body_text or "",
+                query=query,
             )
+
+            # Best-effort VIN cross-check -- only when the ad actually
+            # exposes a VIN (mostly dealer listings), fails silently if
+            # NHTSA's API is unreachable rather than blocking the listing.
+            vin = vin_check.extract_vin(f"{title} {snippet} {body_text or ''}")
+            if vin:
+                result = await vin_check.cross_check_vin(vin, listing.get("year"))
+                if result:
+                    listing["vin_check"] = {
+                        "vin": result.vin,
+                        "decoded_year": result.decoded_year,
+                        "matches_ad_year": result.matches_ad_year,
+                        "note": result.note,
+                    }
+
+            listings.append(listing)
 
     logger.info(f"Discovery complete: {len(listings)} candidate listings ({detail_fetches} detail pages fetched, rest classified from search snippet only)")
     return listings
