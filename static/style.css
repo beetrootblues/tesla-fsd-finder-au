@@ -30,6 +30,17 @@
   --sidebar-width: 280px;
   --banner-height: 40px;
   --mobile-nav-height: 60px;
+  /* Glass tokens -- a CSS approximation of Apple's Liquid Glass material,
+     used only on chrome that floats over scrolling content (header, sticky
+     filter bar, sheets, small pill controls), never on the card body
+     itself. Real Liquid Glass is a native rendering system (SwiftUI/UIKit
+     glassEffect); this is web content in a WKWebView, so this is a visual
+     approximation via backdrop-filter, not the genuine Apple material. */
+  --glass-bg: rgba(28, 33, 40, 0.72);
+  --glass-bg-strong: rgba(22, 27, 34, 0.82);
+  --glass-border: rgba(255, 255, 255, 0.09);
+  --glass-highlight: rgba(255, 255, 255, 0.06);
+  --glass-blur: 20px;
 }
 
 [data-bs-theme="light"] {
@@ -45,6 +56,11 @@
   --shadow-sm: 0 1px 3px rgba(0,0,0,.08);
   --shadow-md: 0 4px 12px rgba(0,0,0,.1);
   --shadow-lg: 0 8px 24px rgba(0,0,0,.12);
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-bg-strong: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --glass-highlight: rgba(255, 255, 255, 0.5);
+  --glass-blur: 20px;
 }
 
 /* ---------- Base ---------- */
@@ -106,12 +122,31 @@ a:hover { color: var(--accent-hover); }
 /* ---------- Header ---------- */
 .app-header {
   height: var(--header-height);
-  background: var(--bg-secondary);
-  border-bottom: 1px solid var(--border-color);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(1.5);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.5);
+  border-bottom: 1px solid var(--glass-border);
+  position: relative;
   position: sticky;
   top: var(--banner-height);
   z-index: 1000;
   box-shadow: var(--shadow-sm);
+}
+/* Specular highlight along the top edge -- the closest a flat CSS border
+   gets to Liquid Glass's light-catching-an-edge behaviour. Skipped
+   entirely under Reduce Transparency / Reduce Motion since it's pure
+   decoration with no functional meaning. */
+.app-header::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--glass-highlight), transparent);
+  pointer-events: none;
+}
+@media (prefers-reduced-transparency: reduce) {
+  .app-header { backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--bg-secondary); }
+  .app-header::after { display: none; }
 }
 .fsd-banner.d-none + .app-header { top: 0; }
 
@@ -414,14 +449,21 @@ a:hover { color: var(--accent-hover); }
 }
 .card-watch-btn {
   position: absolute; top: 8px; right: 8px;
-  background: rgba(0,0,0,.5); backdrop-filter: blur(4px);
-  border: none; border-radius: 50%; width: 34px; height: 34px;
+  background: rgba(20,20,22,.35);
+  backdrop-filter: blur(16px) saturate(1.8);
+  -webkit-backdrop-filter: blur(16px) saturate(1.8);
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 2px 8px rgba(0,0,0,.25);
+  border-radius: 50%; width: 34px; height: 34px;
   display: flex; align-items: center; justify-content: center;
   color: #fff; cursor: pointer; font-size: 16px;
   transition: transform .15s, background .15s;
 }
-.card-watch-btn:hover { transform: scale(1.1); background: rgba(0,0,0,.7); }
+.card-watch-btn:hover { transform: scale(1.1); background: rgba(20,20,22,.5); }
 .card-watch-btn.watched { color: var(--accent); }
+@media (prefers-reduced-transparency: reduce) {
+  .card-watch-btn { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(0,0,0,.6); }
+}
 
 .badge-new {
   background: var(--success); color: #fff; font-size: 10px;
@@ -431,6 +473,12 @@ a:hover { color: var(--accent-hover); }
 .badge-source {
   font-size: 10px; font-weight: 600; padding: 2px 8px;
   border-radius: 4px; color: #fff;
+  backdrop-filter: blur(12px) saturate(1.6);
+  -webkit-backdrop-filter: blur(12px) saturate(1.6);
+  border: 1px solid rgba(255,255,255,.15);
+}
+@media (prefers-reduced-transparency: reduce) {
+  .badge-source { backdrop-filter: none; -webkit-backdrop-filter: none; }
 }
 
 /* Card body */
@@ -469,7 +517,8 @@ a:hover { color: var(--accent-hover); }
 
 .badge-fsd, .badge-fsd-sm {
   font-size: 11px; font-weight: 600; padding: 3px 8px;
-  border-radius: 4px; display: inline-flex; align-items: center; gap: 4px;
+  border-radius: 999px; display: inline-flex; align-items: center; gap: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
 }
 .badge-hw {
   font-size: 10px; font-weight: 600; padding: 3px 6px;
@@ -537,13 +586,18 @@ a:hover { color: var(--accent-hover); }
 }
 .listing-table th {
   padding: 10px 12px;
-  background: var(--bg-secondary);
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(var(--glass-blur)) saturate(1.5);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.5);
   border-bottom: 2px solid var(--border-color);
   font-size: 11px; font-weight: 600;
   text-transform: uppercase; letter-spacing: .5px;
   color: var(--text-muted);
   white-space: nowrap;
   position: sticky; top: 0; z-index: 1;
+}
+@media (prefers-reduced-transparency: reduce) {
+  .listing-table th { backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--bg-secondary); }
 }
 .th-sortable { cursor: pointer; }
 .th-sortable:hover { color: var(--accent); }
