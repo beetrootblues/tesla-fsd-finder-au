@@ -32,6 +32,8 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 
+import pricing
+
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
@@ -151,6 +153,7 @@ def _load_listings() -> list[dict]:
             _listings_cache = [
                 _normalise_listing(item, i) for i, item in enumerate(raw_list)
             ]
+            pricing.annotate_all(_listings_cache)
             if not _last_updated:
                 dates = [
                     item.get("found_at", "")

@@ -155,6 +155,25 @@ function transferBadgeClass(fsdTransfer) {
 // <details> disclosure -- no JS state needed to track open/closed per
 // card, the browser handles it, and it stays keyboard/screen-reader
 // accessible for free.
+function renderPriceComparison(listing) {
+  const pc = listing.price_comparison;
+  if (!pc || pc.verdict === 'insufficient_data') return '';
+  const labels = {
+    below_market: `${Math.abs(pc.percent_vs_median)}% below similar-spec median`,
+    above_market: `${pc.percent_vs_median}% above similar-spec median`,
+    at_market: 'in line with similar-spec median',
+  };
+  const classes = {
+    below_market: 'price-cmp-below',
+    above_market: 'price-cmp-above',
+    at_market: 'price-cmp-neutral',
+  };
+  const label = labels[pc.verdict];
+  if (!label) return '';
+  const title = `${pc.caveat} (based on ${pc.comparable_count} comparable listings: ${escapeHtml(pc.group_description)})`;
+  return `<span class="price-cmp ${classes[pc.verdict]}" title="${title}">${label}</span>`;
+}
+
 function renderSellerQuestions(listing) {
   const questions = listing.seller_questions;
   if (!questions || questions.length === 0) return '';
@@ -406,6 +425,7 @@ function renderCards(listings) {
             <span class="card-price">${formatPrice(l.price)}</span>
             ${prevPrice}
             ${priceDrop}
+            ${renderPriceComparison(l)}
           </div>
           <div class="card-badges">
             <span class="badge-fsd ${fsdBadgeClass(l.fsd_status)}">
