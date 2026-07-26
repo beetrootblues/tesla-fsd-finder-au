@@ -116,6 +116,7 @@ def _normalise_listing(raw: dict, index: int) -> dict:
         "fsd_transfer": raw.get("fsd_transfer", "none"),
         "supercharging_status": raw.get("supercharging_status", "none"),
         "classification_warnings": raw.get("warnings", []),
+        "seller_questions": raw.get("seller_questions", []),
         "classification": raw.get("classification"),
         "discovery_query": raw.get("discovery_query", ""),
         "detail_page_fetched": raw.get("detail_page_fetched", False),

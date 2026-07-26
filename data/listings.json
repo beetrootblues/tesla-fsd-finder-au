@@ -64,7 +64,11 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "Does the car have MCU1 or MCU2? Easiest way to check: can it play Netflix or YouTube through the touchscreen? If yes, it's MCU2.",
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -133,7 +137,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -204,7 +211,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -273,7 +283,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -344,7 +357,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -413,7 +429,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -482,7 +501,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -553,7 +575,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -622,7 +647,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -693,7 +721,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -764,7 +795,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -833,7 +867,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -902,7 +939,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -973,7 +1013,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -1040,7 +1083,11 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "Does the car have MCU1 or MCU2? Easiest way to check: can it play Netflix or YouTube through the touchscreen? If yes, it's MCU2.",
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -1109,7 +1156,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -1178,7 +1228,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -1247,7 +1300,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -1318,7 +1374,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -1385,7 +1444,11 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "Does the car have MCU1 or MCU2? Easiest way to check: can it play Netflix or YouTube through the touchscreen? If yes, it's MCU2.",
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -1454,7 +1517,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -1525,7 +1591,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -1594,7 +1663,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -1663,7 +1735,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -1738,7 +1813,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -1807,7 +1885,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -1876,7 +1957,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -1945,7 +2029,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -2014,7 +2101,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -2083,7 +2173,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -2156,7 +2249,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -2227,7 +2323,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -2296,7 +2395,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -2365,7 +2467,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -2434,7 +2539,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "drive",
@@ -2503,7 +2611,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -2574,7 +2685,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -2645,7 +2759,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -2714,7 +2831,11 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "Does the car have MCU1 or MCU2? Easiest way to check: can it play Netflix or YouTube through the touchscreen? If yes, it's MCU2.",
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -2785,7 +2906,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -2857,7 +2981,11 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "Does the car have MCU1 or MCU2? Easiest way to check: can it play Netflix or YouTube through the touchscreen? If yes, it's MCU2.",
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -2928,7 +3056,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -3003,7 +3134,8 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": []
   },
   {
     "source": "autotrader",
@@ -3074,7 +3206,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -3145,7 +3280,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -3214,7 +3352,11 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "Does the car have MCU1 or MCU2? Easiest way to check: can it play Netflix or YouTube through the touchscreen? If yes, it's MCU2.",
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -3285,7 +3427,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -3356,7 +3501,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -3431,7 +3579,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -3502,7 +3653,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -3573,7 +3727,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -3644,7 +3801,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -3719,7 +3879,8 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": []
   },
   {
     "source": "autotrader",
@@ -3794,7 +3955,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -3868,7 +4032,11 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "Does the car have MCU1 or MCU2? Easiest way to check: can it play Netflix or YouTube through the touchscreen? If yes, it's MCU2.",
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -3939,7 +4107,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -4010,7 +4181,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -4081,7 +4255,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -4152,7 +4329,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -4223,7 +4403,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -4294,7 +4477,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -4365,7 +4551,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -4436,7 +4625,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -4507,7 +4699,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -4576,7 +4771,11 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "Does the car have MCU1 or MCU2? Easiest way to check: can it play Netflix or YouTube through the touchscreen? If yes, it's MCU2.",
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -4647,7 +4846,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -4718,7 +4920,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -4789,7 +4994,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -4860,7 +5068,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -4931,7 +5142,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -5002,7 +5216,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -5075,7 +5292,11 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "Does the car have MCU1 or MCU2? Easiest way to check: can it play Netflix or YouTube through the touchscreen? If yes, it's MCU2.",
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -5146,7 +5367,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -5217,7 +5441,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -5288,7 +5515,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -5359,7 +5589,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -5430,7 +5663,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -5501,7 +5737,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -5572,7 +5811,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -5641,7 +5883,11 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "Does the car have MCU1 or MCU2? Easiest way to check: can it play Netflix or YouTube through the touchscreen? If yes, it's MCU2.",
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -5712,7 +5958,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -5783,7 +6032,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -5858,7 +6110,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -5929,7 +6184,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -6000,7 +6258,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -6071,7 +6332,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -6142,7 +6406,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -6213,7 +6480,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -6289,7 +6559,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -6360,7 +6633,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -6431,7 +6707,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -6502,7 +6781,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -6573,7 +6855,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -6644,7 +6929,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -6715,7 +7003,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -6786,7 +7077,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -6857,7 +7151,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -6928,7 +7225,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -6999,7 +7299,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -7070,7 +7373,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -7141,7 +7447,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -7218,7 +7527,11 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "Can you confirm via your Tesla app (or the original invoice) whether FSD shows as a one-off purchase or an active monthly subscription? Only a purchase transfers to a new owner.",
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -7289,7 +7602,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -7360,7 +7676,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -7431,7 +7750,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -7502,7 +7824,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -7573,7 +7898,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -7644,7 +7972,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -7715,7 +8046,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -7786,7 +8120,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -7857,7 +8194,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -7928,7 +8268,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -7999,7 +8342,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -8070,7 +8416,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -8141,7 +8490,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -8212,7 +8564,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -8283,7 +8638,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -8354,7 +8712,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -8425,7 +8786,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -8496,7 +8860,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -8567,7 +8934,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -8638,7 +9008,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -8709,7 +9082,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -8778,7 +9154,11 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "Does the car have MCU1 or MCU2? Easiest way to check: can it play Netflix or YouTube through the touchscreen? If yes, it's MCU2.",
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -8849,7 +9229,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -8920,7 +9303,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -8991,7 +9377,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -9064,7 +9453,11 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "Does the car have MCU1 or MCU2? Easiest way to check: can it play Netflix or YouTube through the touchscreen? If yes, it's MCU2.",
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -9135,7 +9528,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -9206,7 +9602,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -9277,7 +9676,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -9346,7 +9748,11 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "Does the car have MCU1 or MCU2? Easiest way to check: can it play Netflix or YouTube through the touchscreen? If yes, it's MCU2.",
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -9415,7 +9821,11 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "Does the car have MCU1 or MCU2? Easiest way to check: can it play Netflix or YouTube through the touchscreen? If yes, it's MCU2.",
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -9484,7 +9894,11 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "Does the car have MCU1 or MCU2? Easiest way to check: can it play Netflix or YouTube through the touchscreen? If yes, it's MCU2.",
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -9553,7 +9967,11 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "Does the car have MCU1 or MCU2? Easiest way to check: can it play Netflix or YouTube through the touchscreen? If yes, it's MCU2.",
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -9624,7 +10042,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -9695,7 +10116,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -9766,7 +10190,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -9835,7 +10262,11 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "Does the car have MCU1 or MCU2? Easiest way to check: can it play Netflix or YouTube through the touchscreen? If yes, it's MCU2.",
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -9906,7 +10337,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -9975,7 +10409,11 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "Does the car have MCU1 or MCU2? Easiest way to check: can it play Netflix or YouTube through the touchscreen? If yes, it's MCU2.",
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -10044,7 +10482,11 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "Does the car have MCU1 or MCU2? Easiest way to check: can it play Netflix or YouTube through the touchscreen? If yes, it's MCU2.",
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -10115,7 +10557,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -10186,7 +10631,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -10257,7 +10705,10 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   },
   {
     "source": "autotrader",
@@ -10328,6 +10779,9 @@
       },
       "warnings": []
     },
-    "warnings": []
+    "warnings": [],
+    "seller_questions": [
+      "What Autopilot computer does it have -- can you check under Controls > Software > Additional Vehicle Information in the car, or send a clear photo of the front camera cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+    ]
   }
 ]

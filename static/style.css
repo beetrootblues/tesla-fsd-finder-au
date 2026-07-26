@@ -549,6 +549,23 @@ a:hover { color: var(--accent-hover); }
   padding: 4px 8px; margin-top: 6px; display: flex; gap: 6px; align-items: flex-start;
 }
 
+.seller-questions {
+  margin-top: 6px; font-size: 12px;
+  border: 1px solid var(--border-color); border-radius: 6px;
+  background: var(--bg-primary);
+}
+.seller-questions summary {
+  padding: 6px 10px; cursor: pointer; color: var(--text-secondary);
+  display: flex; align-items: center; gap: 6px; list-style: none;
+}
+.seller-questions summary::-webkit-details-marker { display: none; }
+.seller-questions summary:hover { color: var(--text-primary); }
+.seller-questions ul {
+  margin: 0; padding: 2px 14px 10px 30px; color: var(--text-secondary);
+}
+.seller-questions li { margin-bottom: 4px; line-height: 1.4; }
+.seller-questions li:last-child { margin-bottom: 0; }
+
 /* Card actions */
 .card-actions {
   display: flex; gap: 8px; align-items: center; margin-top: auto; padding-top: 8px;

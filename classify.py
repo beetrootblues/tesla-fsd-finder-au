@@ -311,6 +311,49 @@ def classify(title: str, body_text: str) -> Classification:
     return Classification(model, autopilot_hw, mcu, fsd, supercharging, warnings)
 
 
+def suggest_seller_questions(c: Classification) -> list[str]:
+    """
+    Turns whatever's still uncertain about a listing into the specific
+    question a buyer should actually send, rather than leaving them to
+    guess what "unclear" means in practice. Only returns questions for
+    fields that are genuinely worth asking about -- not "confirmed" or
+    bare "unknown" fields with zero signal to follow up on.
+    """
+    questions: list[str] = []
+
+    if c.fsd.value == "mentioned_unclear":
+        questions.append(
+            "Can you confirm via your Tesla app (or the original invoice) whether FSD shows as a "
+            "one-off purchase or an active monthly subscription? Only a purchase transfers to a new owner."
+        )
+    elif c.fsd.value == "subscription_active":
+        questions.append(
+            "You've mentioned an FSD subscription -- just confirming this won't transfer to me and "
+            "I'd need to subscribe separately if I want it, correct?"
+        )
+
+    if c.model.value in ("S", "X") and c.mcu.confidence in ("possible", "unknown"):
+        questions.append(
+            "Does the car have MCU1 or MCU2? Easiest way to check: can it play Netflix or YouTube "
+            "through the touchscreen? If yes, it's MCU2."
+        )
+
+    if c.autopilot_hw.confidence in ("possible", "unknown"):
+        questions.append(
+            "What Autopilot computer does it have -- can you check under Controls > Software > "
+            "Additional Vehicle Information in the car, or send a clear photo of the front camera "
+            "cluster above the rear-view mirror? Red-tinted lenses mean HW4, plain black means HW3 or earlier."
+        )
+
+    if c.supercharging.value == "unlimited_transferable_claimed":
+        questions.append(
+            "Can you check the Tesla app's Charging screen and confirm Supercharging shows as free/"
+            "unlimited there specifically, not just as something you were told when you bought it?"
+        )
+
+    return questions
+
+
 # Backward-compatible bridge to the field names scrapers.py / main.py / app.js
 # already read (fsd_status, hw_version), so existing filters/badges/CSV export
 # keep working while new, more precise fields are added alongside them.
@@ -340,4 +383,5 @@ def classify_to_legacy_fields(title: str, body_text: str) -> dict:
         "fsd_transfer": c.fsd.value,  # purchased_outright | subscription_active | mentioned_unclear | none
         "supercharging_status": c.supercharging.value,
         "warnings": c.warnings,
+        "seller_questions": suggest_seller_questions(c),
     }

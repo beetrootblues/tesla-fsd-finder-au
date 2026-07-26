@@ -151,6 +151,22 @@ function transferBadgeClass(fsdTransfer) {
   return 'badge-fsd-possible';
 }
 
+// Renders the classifier's suggested seller questions as a native
+// <details> disclosure -- no JS state needed to track open/closed per
+// card, the browser handles it, and it stays keyboard/screen-reader
+// accessible for free.
+function renderSellerQuestions(listing) {
+  const questions = listing.seller_questions;
+  if (!questions || questions.length === 0) return '';
+  const items = questions.map((q) => `<li>${escapeHtml(q)}</li>`).join('');
+  return `
+    <details class="seller-questions">
+      <summary><i class="bi bi-chat-dots"></i> ${questions.length} question${questions.length > 1 ? 's' : ''} worth asking the seller</summary>
+      <ul>${items}</ul>
+    </details>
+  `;
+}
+
 function fsdIcon(status) {
   const map = { confirmed: 'bi-check-circle-fill', likely: 'bi-check-circle', possible: 'bi-question-circle' };
   return map[status] || 'bi-dash-circle';
@@ -402,6 +418,7 @@ function renderCards(listings) {
             ${l.seller_type ? `<span class="badge-seller badge-seller-${l.seller_type.toLowerCase()}">${l.seller_type}</span>` : ''}
           </div>
           ${(l.classification_warnings && l.classification_warnings.length) ? `<div class="card-warning"><i class="bi bi-exclamation-triangle-fill"></i><span>${escapeHtml(l.classification_warnings.join(' \u00b7 '))}</span></div>` : ''}
+          ${renderSellerQuestions(l)}
           <div class="card-actions">
             <a href="${escapeHtml(l.source_url)}" target="_blank" rel="noopener" class="btn-view">
               View on ${escapeHtml(l.source)} <i class="bi bi-box-arrow-up-right"></i>
