@@ -1,16 +1,29 @@
 name: iOS Build (unsigned)
 
-# Produces an UNSIGNED .ipa as a downloadable workflow artifact. This is as
-# far as any CI can take this without Apple signing credentials this repo
-# doesn't have: an unsigned .ipa will NOT install on a physical iPhone as-is.
-# iOS enforces code signing at the OS level -- no amount of build tooling
-# gets around that, only an actual Apple identity (a signing certificate +
-# provisioning profile, or Apple ID-based signing) does.
+# Produces an UNSIGNED .ipa, committed directly to dist/ by this workflow
+# (see the final step -- Actions artifacts redirect through Azure Blob
+# Storage hosts that can't be reliably fetched from arbitrary tooling, so
+# committing straight to the repo is more robust than relying on the
+# artifact download path). An unsigned .ipa will NOT install on a
+# physical iPhone as-is -- iOS enforces code signing at the OS level, no
+# build tooling gets around that, only an actual Apple identity does.
+#
+# Runs on macos-26 (Xcode 26.x, iOS 26 SDK) specifically so this compiles
+# against the SDK that has real Liquid Glass APIs. Be clear-eyed about
+# what that buys you, though: this app's actual UI is a WKWebView (static/
+# *.html/js/css), and glassEffect()/GlassEffectContainer are SwiftUI/UIKit
+# APIs that don't reach web content. Building with the iOS 26 SDK gets
+# Liquid Glass automatically applied to genuine native system UI this app
+# shows -- the status bar, the Face ID prompt, any share sheet -- on a
+# device actually running iOS 26. It does not put Liquid Glass on the
+# listing cards, filters, or anything else rendered in the WebView; that
+# got a CSS approximation instead (see static/style.css).
 #
 # To go from this artifact to something on your phone, either:
-#   (a) Download the artifact, unzip it, and hand the .app to Sideloadly or
-#       AltStore/SideStore on your own machine -- they sign it with your own
-#       free Apple ID at install time (re-sign every 7 days on a free ID).
+#   (a) Download dist/TeslaFSDFinderAU-unsigned.ipa from the repo and hand
+#       the .app to Sideloadly or AltStore/SideStore on your own machine --
+#       they sign it with your own free Apple ID at install time (re-sign
+#       every 7 days on a free ID).
 #   (b) Skip CI entirely: `./scripts/build-ios.sh --open` on your Mac lets
 #       Xcode sign with your Apple ID and run straight to your phone over
 #       USB/WiFi -- fewer moving parts than round-tripping through CI.
@@ -28,9 +41,14 @@ permissions:
 
 jobs:
   build:
-    runs-on: macos-14
+    runs-on: macos-26
     steps:
       - uses: actions/checkout@v4
+
+      - name: Confirm actual Xcode/SDK on this runner
+        run: |
+          xcodebuild -version
+          xcodebuild -showsdks
 
       - uses: actions/setup-node@v4
         with:
