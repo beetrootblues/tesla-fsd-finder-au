@@ -23,6 +23,9 @@ name: iOS Build (unsigned)
 on:
   workflow_dispatch: {}
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: macos-14
@@ -60,12 +63,30 @@ jobs:
 
       - name: Package unsigned .ipa
         run: |
-          mkdir -p build/Payload
+          mkdir -p build/Payload dist
           cp -r "build/DerivedData/Build/Products/Release-iphoneos/App.app" build/Payload/
           cd build && zip -r TeslaFSDFinderAU-unsigned.ipa Payload
+          cp TeslaFSDFinderAU-unsigned.ipa ../dist/
 
       - uses: actions/upload-artifact@v4
         with:
           name: TeslaFSDFinderAU-unsigned-ipa
           path: build/TeslaFSDFinderAU-unsigned.ipa
           retention-days: 14
+
+      - name: Commit IPA back to the repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f dist/TeslaFSDFinderAU-unsigned.ipa
+          if git diff --staged --quiet; then
+            echo "No change in IPA contents, nothing to commit"
+          else
+            git commit -m "chore: update unsigned iOS build artifact [skip ci]
+
+          Built from $(git rev-parse --short HEAD) by this workflow run.
+          Unsigned -- sideload with your own Apple ID via Sideloadly/AltStore
+          to actually install it."
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
