@@ -182,8 +182,29 @@ function renderSellerQuestions(listing) {
     <details class="seller-questions">
       <summary><i class="bi bi-chat-dots"></i> ${questions.length} question${questions.length > 1 ? 's' : ''} worth asking the seller</summary>
       <ul>${items}</ul>
+      <button type="button" class="draft-email-btn" onclick="draftSellerEmail('${listing.id}')">
+        <i class="bi bi-envelope"></i> Draft email with these questions
+      </button>
     </details>
   `;
+}
+
+// Opens a mailto: draft with the questions pre-filled -- you fill in the
+// seller's address (find it via "Contact seller" on the original listing)
+// and hit send yourself. Deliberately not automatic: nothing here contacts
+// a stranger without a person reading it first. See README for why.
+function draftSellerEmail(listingId) {
+  const listing = state.allListings.find((l) => l.id === listingId);
+  if (!listing) return;
+  const questions = listing.seller_questions || [];
+  const subject = `Question about your ${listing.title}`;
+  const body =
+    `Hi,\n\nI'm interested in your listing: ${listing.title}` +
+    (listing.source_url ? ` (${listing.source_url})` : '') +
+    `\n\nA couple of questions before I follow up further:\n\n` +
+    questions.map((q, i) => `${i + 1}. ${q}`).join('\n\n') +
+    `\n\nThanks,\n`;
+  window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 const VERIFY_FIELD_LABELS = {

@@ -565,6 +565,14 @@ a:hover { color: var(--accent-hover); }
 }
 .seller-questions li { margin-bottom: 4px; line-height: 1.4; }
 .seller-questions li:last-child { margin-bottom: 0; }
+.draft-email-btn {
+  margin: 0 10px 10px; font-size: 12px; padding: 6px 12px;
+  border-radius: 6px; border: 1px solid var(--border-color);
+  background: var(--bg-card); color: var(--text-primary); cursor: pointer;
+  display: flex; align-items: center; gap: 6px; width: calc(100% - 20px);
+  justify-content: center; font-weight: 600;
+}
+.draft-email-btn:hover { border-color: var(--accent); color: var(--accent); }
 
 .price-cmp {
   font-size: 11px; font-weight: 600; padding: 2px 7px;
