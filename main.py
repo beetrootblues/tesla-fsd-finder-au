@@ -42,6 +42,7 @@ BASE_DIR = Path(__file__).resolve().parent
 STATIC_DIR = BASE_DIR / "static"
 DATA_DIR = BASE_DIR / "data"
 DATA_FILE = DATA_DIR / "listings.json"
+VERIFICATIONS_FILE = DATA_DIR / "verifications.json"
 PRICE_HISTORY_FILE = DATA_DIR / "price_history.json"
 ALERTS_FILE = DATA_DIR / "alerts.json"
 
@@ -154,6 +155,7 @@ def _load_listings() -> list[dict]:
                 _normalise_listing(item, i) for i, item in enumerate(raw_list)
             ]
             pricing.annotate_all(_listings_cache)
+            _attach_verification_summaries(_listings_cache)
             if not _last_updated:
                 dates = [
                     item.get("found_at", "")
@@ -643,6 +645,87 @@ async def device_count():
     devices = _load_devices()
     active = sum(1 for d in devices.values() if d.get("alerts_enabled"))
     return {"total": len(devices), "alerts_enabled": active}
+
+
+# ---------------------------------------------------------------------------
+# Community verification (V2 roadmap)
+#
+# A lightweight trust layer *alongside* classify.py's automated inference,
+# not merged into it. "Confirmed" in classify.py means "the seller said so
+# in the ad text" -- it can be wrong. A verification here means an actual
+# buyer says they physically checked the car. Different category of
+# evidence, kept visibly separate rather than quietly upgrading a
+# classification's confidence level based on an unverified stranger's
+# say-so -- anyone can submit one of these, there's no identity check,
+# so it gets its own clearly-labelled UI, not a silent confidence bump.
+# ---------------------------------------------------------------------------
+
+VALID_VERIFICATION_FIELDS = {"mcu", "autopilot_hw", "fsd_transfer", "supercharging_status"}
+
+def _load_verifications() -> dict:
+    if VERIFICATIONS_FILE.exists():
+        try:
+            return json.loads(VERIFICATIONS_FILE.read_text())
+        except Exception:
+            pass
+    return {}
+
+def _save_verifications(verifications: dict):
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    VERIFICATIONS_FILE.write_text(json.dumps(verifications, indent=2))
+
+
+def _attach_verification_summaries(listings: list[dict]) -> None:
+    """Computed once per listing-load rather than per-card-fetch -- avoids
+    146 extra API round-trips just to render a badge most cards won't have
+    anything to show for yet."""
+    verifications = _load_verifications()
+    for listing in listings:
+        entries = verifications.get(listing.get("id"), [])
+        listing["verification_summary"] = {
+            "count": len(entries),
+            "latest": entries[-1] if entries else None,
+        }
+
+
+@app.post("/api/verify/{listing_id}")
+async def submit_verification(
+    listing_id: str,
+    field: str = Query(..., description=f"Which field was checked: one of {sorted(VALID_VERIFICATION_FIELDS)}"),
+    confirmed_value: str = Query(..., description="What was actually observed, e.g. 'MCU2', 'HW4'"),
+    note: Optional[str] = Query(None, description="Optional free-text detail"),
+):
+    """Record a buyer's in-person confirmation of a classified field."""
+    if field not in VALID_VERIFICATION_FIELDS:
+        return JSONResponse(status_code=400, content={"error": f"field must be one of {sorted(VALID_VERIFICATION_FIELDS)}"})
+    if not any(l.get("id") == listing_id for l in _listings_cache):
+        return JSONResponse(status_code=404, content={"error": "listing not found"})
+
+    verifications = _load_verifications()
+    verifications.setdefault(listing_id, []).append({
+        "field": field,
+        "confirmed_value": confirmed_value.strip()[:100],
+        "note": (note or "").strip()[:500],
+        "submitted_at": datetime.now(timezone.utc).isoformat(),
+    })
+    _save_verifications(verifications)
+
+    # reflect immediately in the in-memory cache rather than waiting for
+    # the next full listings reload
+    for listing in _listings_cache:
+        if listing.get("id") == listing_id:
+            entries = verifications[listing_id]
+            listing["verification_summary"] = {"count": len(entries), "latest": entries[-1]}
+            break
+
+    return {"status": "ok", "listing_id": listing_id, "count": len(verifications[listing_id])}
+
+
+@app.get("/api/verify/{listing_id}")
+async def get_verifications(listing_id: str):
+    """All community verifications recorded for a listing."""
+    verifications = _load_verifications()
+    return {"listing_id": listing_id, "verifications": verifications.get(listing_id, [])}
 
 
 # ---------------------------------------------------------------------------

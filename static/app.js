@@ -186,6 +186,56 @@ function renderSellerQuestions(listing) {
   `;
 }
 
+const VERIFY_FIELD_LABELS = {
+  mcu: 'MCU version', autopilot_hw: 'Autopilot hardware',
+  fsd_transfer: 'FSD status', supercharging_status: 'Supercharging',
+};
+
+// Community verification -- deliberately a separate visual element from
+// the classifier's own confidence badges, never merged with them. One
+// person's unverified say-so shouldn't quietly look as trustworthy as
+// classify.py's evidence-backed inference.
+function renderVerification(listing) {
+  const summary = listing.verification_summary;
+  const count = summary?.count || 0;
+  const confirmed = count > 0
+    ? `<div class="verify-confirmed"><i class="bi bi-patch-check-fill"></i> Buyer-verified: ${escapeHtml(summary.latest.field ? VERIFY_FIELD_LABELS[summary.latest.field] || summary.latest.field : '')} = ${escapeHtml(summary.latest.confirmed_value)}${count > 1 ? ` (+${count - 1} more)` : ''}</div>`
+    : '';
+
+  const fieldOptions = Object.entries(VERIFY_FIELD_LABELS)
+    .map(([k, label]) => `<option value="${k}">${label}</option>`).join('');
+
+  return `
+    <details class="verify-box">
+      <summary><i class="bi bi-patch-check"></i> ${count > 0 ? 'Add another verification' : 'Verify something in person?'}</summary>
+      ${confirmed}
+      <div class="verify-form">
+        <select class="verify-field">${fieldOptions}</select>
+        <input type="text" class="verify-value" placeholder="What did you see? e.g. MCU2" maxlength="100">
+        <button type="button" onclick="submitVerification('${listing.id}', this)">Submit</button>
+      </div>
+    </details>
+  `;
+}
+
+async function submitVerification(listingId, buttonEl) {
+  const box = buttonEl.closest('.verify-form');
+  const field = box.querySelector('.verify-field').value;
+  const value = box.querySelector('.verify-value').value.trim();
+  if (!value) return;
+  buttonEl.disabled = true;
+  buttonEl.textContent = 'Saving...';
+  try {
+    const res = await fetch(`/api/verify/${listingId}?field=${encodeURIComponent(field)}&confirmed_value=${encodeURIComponent(value)}`, { method: 'POST' });
+    if (!res.ok) throw new Error('failed');
+    await fetchListings();
+  } catch (e) {
+    buttonEl.disabled = false;
+    buttonEl.textContent = 'Submit';
+    alert('Could not save verification -- try again.');
+  }
+}
+
 function fsdIcon(status) {
   const map = { confirmed: 'bi-check-circle-fill', likely: 'bi-check-circle', possible: 'bi-question-circle' };
   return map[status] || 'bi-dash-circle';
@@ -439,6 +489,7 @@ function renderCards(listings) {
           </div>
           ${(l.classification_warnings && l.classification_warnings.length) ? `<div class="card-warning"><i class="bi bi-exclamation-triangle-fill"></i><span>${escapeHtml(l.classification_warnings.join(' \u00b7 '))}</span></div>` : ''}
           ${renderSellerQuestions(l)}
+          ${renderVerification(l)}
           <div class="card-actions">
             <a href="${escapeHtml(l.source_url)}" target="_blank" rel="noopener" class="btn-view">
               View on ${escapeHtml(l.source)} <i class="bi bi-box-arrow-up-right"></i>
