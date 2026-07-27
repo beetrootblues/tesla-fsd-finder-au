@@ -56,6 +56,8 @@ const dom = {
   filterModel: $('#filterModel'),
   filterState: $('#filterState'),
   filterFSD: $('#filterFSD'),
+  filterHW: $('#filterHW'),
+  filterMCU: $('#filterMCU'),
   filterSellerType: $('#filterSellerType'),
   filterYearMin: $('#filterYearMin'),
   filterYearMax: $('#filterYearMax'),
@@ -64,6 +66,8 @@ const dom = {
   filterMaxKm: $('#filterMaxKm'),
   filterHasImages: $('#filterHasImages'),
   filterPriceDrops: $('#filterPriceDrops'),
+  filterUSC: $('#filterUSC'),
+  filterBelowMarket: $('#filterBelowMarket'),
   filterSort: $('#filterSort'),
   btnReset: $('#btnReset'),
   btnRefresh: $('#btnRefresh'),
@@ -174,18 +178,67 @@ function renderPriceComparison(listing) {
   return `<span class="price-cmp ${classes[pc.verdict]}" title="${title}">${label}</span>`;
 }
 
-function renderSellerQuestions(listing) {
-  const questions = listing.seller_questions;
-  if (!questions || questions.length === 0) return '';
-  const items = questions.map((q) => `<li>${escapeHtml(q)}</li>`).join('');
-  return `
-    <details class="seller-questions">
-      <summary><i class="bi bi-chat-dots"></i> ${questions.length} question${questions.length > 1 ? 's' : ''} worth asking the seller</summary>
-      <ul>${items}</ul>
+// Questions + verification used to be two separate <details> blocks
+// stacked on every card. Both are "optional, dig deeper if you want"
+// content -- unlike the warning banner (kept separate, always visible,
+// since a contradiction shouldn't hide behind a click) -- so they're
+// merged into one disclosure with a summary that reflects what's
+// actually inside, rather than two things to notice and open separately.
+function renderDetailsSection(listing) {
+  const questions = listing.seller_questions || [];
+  const vSummary = listing.verification_summary;
+  const vCount = vSummary?.count || 0;
+  if (questions.length === 0 && vCount === 0) return renderVerifyFormOnly(listing); // still offer to verify even with nothing else to show
+
+  const summaryParts = [];
+  if (questions.length) summaryParts.push(`${questions.length} question${questions.length > 1 ? 's' : ''} for the seller`);
+  if (vCount) summaryParts.push(`${vCount} buyer verification${vCount > 1 ? 's' : ''}`);
+  const summaryText = summaryParts.join(' \u00b7 ') || 'Details';
+
+  const questionsBlock = questions.length ? `
+    <div class="details-section">
+      <h4><i class="bi bi-chat-dots"></i> Worth asking the seller</h4>
+      <ul>${questions.map((q) => `<li>${escapeHtml(q)}</li>`).join('')}</ul>
       <button type="button" class="draft-email-btn" onclick="draftSellerEmail('${listing.id}')">
         <i class="bi bi-envelope"></i> Draft email with these questions
       </button>
+    </div>` : '';
+
+  const confirmedLine = vCount > 0
+    ? `<div class="verify-confirmed"><i class="bi bi-patch-check-fill"></i> Buyer-verified: ${escapeHtml(VERIFY_FIELD_LABELS[vSummary.latest.field] || vSummary.latest.field)} = ${escapeHtml(vSummary.latest.confirmed_value)}${vCount > 1 ? ` (+${vCount - 1} more)` : ''}</div>`
+    : '';
+
+  return `
+    <details class="card-details">
+      <summary><i class="bi bi-info-circle"></i> ${summaryText}</summary>
+      ${questionsBlock}
+      <div class="details-section">
+        <h4><i class="bi bi-patch-check"></i> Community verification</h4>
+        ${confirmedLine}
+        ${renderVerifyForm(listing)}
+      </div>
     </details>
+  `;
+}
+
+function renderVerifyFormOnly(listing) {
+  return `
+    <details class="card-details">
+      <summary><i class="bi bi-patch-check"></i> Verify something in person?</summary>
+      <div class="details-section">${renderVerifyForm(listing)}</div>
+    </details>
+  `;
+}
+
+function renderVerifyForm(listing) {
+  const fieldOptions = Object.entries(VERIFY_FIELD_LABELS)
+    .map(([k, label]) => `<option value="${k}">${label}</option>`).join('');
+  return `
+    <div class="verify-form">
+      <select class="verify-field">${fieldOptions}</select>
+      <input type="text" class="verify-value" placeholder="What did you see? e.g. MCU2" maxlength="100">
+      <button type="button" onclick="submitVerification('${listing.id}', this)">Submit</button>
+    </div>
   `;
 }
 
@@ -211,33 +264,6 @@ const VERIFY_FIELD_LABELS = {
   mcu: 'MCU version', autopilot_hw: 'Autopilot hardware',
   fsd_transfer: 'FSD status', supercharging_status: 'Supercharging',
 };
-
-// Community verification -- deliberately a separate visual element from
-// the classifier's own confidence badges, never merged with them. One
-// person's unverified say-so shouldn't quietly look as trustworthy as
-// classify.py's evidence-backed inference.
-function renderVerification(listing) {
-  const summary = listing.verification_summary;
-  const count = summary?.count || 0;
-  const confirmed = count > 0
-    ? `<div class="verify-confirmed"><i class="bi bi-patch-check-fill"></i> Buyer-verified: ${escapeHtml(summary.latest.field ? VERIFY_FIELD_LABELS[summary.latest.field] || summary.latest.field : '')} = ${escapeHtml(summary.latest.confirmed_value)}${count > 1 ? ` (+${count - 1} more)` : ''}</div>`
-    : '';
-
-  const fieldOptions = Object.entries(VERIFY_FIELD_LABELS)
-    .map(([k, label]) => `<option value="${k}">${label}</option>`).join('');
-
-  return `
-    <details class="verify-box">
-      <summary><i class="bi bi-patch-check"></i> ${count > 0 ? 'Add another verification' : 'Verify something in person?'}</summary>
-      ${confirmed}
-      <div class="verify-form">
-        <select class="verify-field">${fieldOptions}</select>
-        <input type="text" class="verify-value" placeholder="What did you see? e.g. MCU2" maxlength="100">
-        <button type="button" onclick="submitVerification('${listing.id}', this)">Submit</button>
-      </div>
-    </details>
-  `;
-}
 
 async function submitVerification(listingId, buttonEl) {
   const box = buttonEl.closest('.verify-form');
@@ -364,6 +390,8 @@ function getSelectedFilters() {
     models: getCheckedValues(dom.filterModel),
     states: getCheckedValues(dom.filterState),
     fsdStatuses: getCheckedValues(dom.filterFSD),
+    hwVersions: getCheckedValues(dom.filterHW),
+    mcuVersions: getCheckedValues(dom.filterMCU),
     sellerTypes: getCheckedValues(dom.filterSellerType),
     source: state.activeSource,
     yearMin: dom.filterYearMin?.value ? parseInt(dom.filterYearMin.value) : null,
@@ -373,6 +401,8 @@ function getSelectedFilters() {
     maxKm: dom.filterMaxKm?.value ? parseInt(dom.filterMaxKm.value) : null,
     hasImages: dom.filterHasImages?.checked || false,
     priceDrops: dom.filterPriceDrops?.checked || false,
+    uscOnly: dom.filterUSC?.checked || false,
+    belowMarketOnly: dom.filterBelowMarket?.checked || false,
     search: dom.searchInput?.value?.trim().toLowerCase() || '',
     sort: dom.filterSort?.value || 'newest',
   };
@@ -388,6 +418,10 @@ function applyFilters() {
     results = results.filter(r => f.states.includes(r.state));
   if (f.fsdStatuses.length && f.fsdStatuses.length < 4)
     results = results.filter(r => f.fsdStatuses.includes(r.fsd_status));
+  if (f.hwVersions.length && f.hwVersions.length < 6)
+    results = results.filter(r => f.hwVersions.includes(r.hw_version || 'unknown'));
+  if (f.mcuVersions.length && f.mcuVersions.length < 3)
+    results = results.filter(r => f.mcuVersions.includes(r.mcu_version || 'unknown'));
   if (f.sellerTypes.length && f.sellerTypes.length < 3)
     results = results.filter(r => f.sellerTypes.map(s=>s.toLowerCase()).includes((r.seller_type||'').toLowerCase()));
   if (f.source !== 'all')
@@ -399,6 +433,8 @@ function applyFilters() {
   if (f.maxKm) results = results.filter(r => (r.odometer || 0) <= f.maxKm);
   if (f.hasImages) results = results.filter(r => r.image_url);
   if (f.priceDrops) results = results.filter(r => r.price_dropped);
+  if (f.uscOnly) results = results.filter(r => r.supercharging_status === 'unlimited_transferable_claimed');
+  if (f.belowMarketOnly) results = results.filter(r => r.price_comparison?.verdict === 'below_market');
   if (f.search) {
     const q = f.search;
     results = results.filter(r =>
@@ -422,6 +458,18 @@ function sortListings(listings, sortKey) {
     case 'km_asc': sorted.sort((a, b) => (a.odometer || 0) - (b.odometer || 0)); break;
     case 'year_desc': sorted.sort((a, b) => (b.year || 0) - (a.year || 0)); break;
     case 'drops': sorted.sort((a, b) => (b.price_drop_pct || 0) - (a.price_drop_pct || 0)); break;
+    case 'best_value':
+      sorted.sort((a, b) => {
+        const pa = a.price_comparison?.percent_vs_median;
+        const pb = b.price_comparison?.percent_vs_median;
+        // listings with no comparable group sink to the bottom either way --
+        // "no data" isn't a value judgement, shouldn't look like a good OR bad deal
+        if (pa == null && pb == null) return 0;
+        if (pa == null) return 1;
+        if (pb == null) return -1;
+        return pa - pb; // most below-market (most negative) first
+      });
+      break;
     default: sorted.sort((a, b) => (b.found_at || '').localeCompare(a.found_at || ''));
   }
   return sorted;
@@ -499,18 +547,16 @@ function renderCards(listings) {
             ${renderPriceComparison(l)}
           </div>
           <div class="card-badges">
-            <span class="badge-fsd ${fsdBadgeClass(l.fsd_status)}">
-              <i class="bi ${fsdIcon(l.fsd_status)}"></i> ${fsdLabel(l.fsd_status)}
-            </span>
-            ${transferLabel(l.fsd_transfer) ? `<span class="badge-fsd ${transferBadgeClass(l.fsd_transfer)}">${transferLabel(l.fsd_transfer)}</span>` : ''}
+            ${transferLabel(l.fsd_transfer)
+              ? `<span class="badge-fsd ${transferBadgeClass(l.fsd_transfer)}"><i class="bi ${fsdIcon(l.fsd_status)}"></i> ${transferLabel(l.fsd_transfer)}</span>`
+              : `<span class="badge-fsd ${fsdBadgeClass(l.fsd_status)}"><i class="bi ${fsdIcon(l.fsd_status)}"></i> ${fsdLabel(l.fsd_status)}</span>`}
             ${l.hw_version ? `<span class="badge-hw">${l.hw_version}</span>` : ''}
             ${l.mcu_version ? `<span class="badge-mcu">${l.mcu_version}</span>` : ''}
             ${l.supercharging_status === 'unlimited_transferable_claimed' ? `<span class="badge-usc"><i class="bi bi-lightning-charge-fill"></i> Unlimited SC claimed</span>` : ''}
             ${l.seller_type ? `<span class="badge-seller badge-seller-${l.seller_type.toLowerCase()}">${l.seller_type}</span>` : ''}
           </div>
           ${(l.classification_warnings && l.classification_warnings.length) ? `<div class="card-warning"><i class="bi bi-exclamation-triangle-fill"></i><span>${escapeHtml(l.classification_warnings.join(' \u00b7 '))}</span></div>` : ''}
-          ${renderSellerQuestions(l)}
-          ${renderVerification(l)}
+          ${renderDetailsSection(l)}
           <div class="card-actions">
             <a href="${escapeHtml(l.source_url)}" target="_blank" rel="noopener" class="btn-view">
               View on ${escapeHtml(l.source)} <i class="bi bi-box-arrow-up-right"></i>

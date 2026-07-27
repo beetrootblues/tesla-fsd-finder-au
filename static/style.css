@@ -549,27 +549,37 @@ a:hover { color: var(--accent-hover); }
   padding: 4px 8px; margin-top: 6px; display: flex; gap: 6px; align-items: flex-start;
 }
 
-.seller-questions {
+.card-details {
   margin-top: 6px; font-size: 12px;
   border: 1px solid var(--border-color); border-radius: 6px;
   background: var(--bg-primary);
 }
-.seller-questions summary {
+.card-details summary {
   padding: 6px 10px; cursor: pointer; color: var(--text-secondary);
   display: flex; align-items: center; gap: 6px; list-style: none;
+  font-weight: 600;
 }
-.seller-questions summary::-webkit-details-marker { display: none; }
-.seller-questions summary:hover { color: var(--text-primary); }
-.seller-questions ul {
-  margin: 0; padding: 2px 14px 10px 30px; color: var(--text-secondary);
+.card-details summary::-webkit-details-marker { display: none; }
+.card-details summary:hover { color: var(--text-primary); }
+.details-section {
+  padding: 0 10px 10px;
+  border-top: 1px solid var(--border-color);
+  margin-top: 2px; padding-top: 8px;
 }
-.seller-questions li { margin-bottom: 4px; line-height: 1.4; }
-.seller-questions li:last-child { margin-bottom: 0; }
+.details-section:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+.details-section h4 {
+  font-size: 10px; text-transform: uppercase; letter-spacing: .5px;
+  color: var(--text-muted); margin: 0 0 6px; font-weight: 700;
+  display: flex; align-items: center; gap: 5px;
+}
+.details-section ul { margin: 0; padding: 0 0 8px 18px; color: var(--text-secondary); }
+.details-section li { margin-bottom: 4px; line-height: 1.4; }
+.details-section li:last-child { margin-bottom: 0; }
 .draft-email-btn {
-  margin: 0 10px 10px; font-size: 12px; padding: 6px 12px;
+  font-size: 12px; padding: 6px 12px;
   border-radius: 6px; border: 1px solid var(--border-color);
   background: var(--bg-card); color: var(--text-primary); cursor: pointer;
-  display: flex; align-items: center; gap: 6px; width: calc(100% - 20px);
+  display: flex; align-items: center; gap: 6px; width: 100%;
   justify-content: center; font-weight: 600;
 }
 .draft-email-btn:hover { border-color: var(--accent); color: var(--accent); }
@@ -582,24 +592,13 @@ a:hover { color: var(--accent-hover); }
 .price-cmp-above { background: rgba(232,33,39,.12); color: var(--accent); }
 .price-cmp-neutral { background: var(--bg-primary); color: var(--text-muted); }
 
-.verify-box {
-  margin-top: 6px; font-size: 12px;
-  border: 1px solid var(--border-color); border-radius: 6px;
-  background: var(--bg-primary);
-}
-.verify-box summary {
-  padding: 6px 10px; cursor: pointer; color: var(--text-secondary);
-  display: flex; align-items: center; gap: 6px; list-style: none;
-}
-.verify-box summary::-webkit-details-marker { display: none; }
-.verify-box summary:hover { color: var(--text-primary); }
 .verify-confirmed {
-  margin: 0 10px 8px; padding: 6px 8px; font-size: 11px;
+  padding: 6px 8px; margin-bottom: 8px; font-size: 11px;
   color: var(--success); background: rgba(63,185,80,.1);
   border-radius: 4px; display: flex; align-items: center; gap: 6px;
 }
 .verify-form {
-  display: flex; gap: 6px; padding: 0 10px 10px; flex-wrap: wrap;
+  display: flex; gap: 6px; flex-wrap: wrap;
 }
 .verify-form select, .verify-form input {
   font-size: 12px; padding: 5px 8px; border-radius: 4px;
