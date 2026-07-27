@@ -1,90 +1,63 @@
 # V2 Roadmap
 
 Grounded in what actually surfaced while building and debugging v2.0 —
-not a generic feature wishlist. Split into bugs (things that are wrong
-right now) and features (things that would make this a sharper tool).
+not a generic feature wishlist. Status as of the V2 implementation pass.
 
-## Bugs / known gaps, carried over from v2.0
+## Shipped
 
-1. **Historical listings mostly lack free-text descriptions.** Backfilling
-   classify.py onto the 146 existing listings only resolved HW version on
-   5 of them, and zero FSD-purchase or Supercharging signals — because
-   most of those listings have blank `description` fields (structured
-   JSON-LD summaries, not seller-written text). The classifier is only as
-   good as the text it gets. Real fix is in discovery.py's detail-page
-   fetch actually landing more often — see "Photo-based classification"
-   below for a path that doesn't depend on ad text at all.
+- **Seller-question templates** (`classify.py` → `suggest_seller_questions`) —
+  for every unresolved field, the exact question to send. Rendered as a
+  card disclosure with a one-tap "draft email" action (mailto:, human
+  sends — see "Explicitly not built" below for why nothing sends on its own).
+- **Fair-price scoring** (`pricing.py`) — compares each listing against
+  others of similar model/HW-tier/build-year, requires >=3 real
+  comparables before scoring, explicit caveat everywhere that it doesn't
+  account for odometer/trim/condition.
+- **VIN cross-check** (`vin_check.py`) — decodes year/make via NHTSA's
+  public vPIC API for listings that expose a VIN. Written against the
+  documented API contract; the live round-trip is unverified from this
+  sandbox's restricted network — confirm it works once deployed.
+- **Community verification** — buyers can mark a field as physically
+  confirmed. Kept deliberately separate from classify.py's own confidence
+  system rather than merged into it (different evidence categories).
+- **Legacy HW guess cleanup + date-sanity bound** — the year-based
+  guesses from v1.2 and a date-extraction bug that could infer a build
+  date in the future are both fixed.
 
-2. **`OfflineViewController.swift` exists but nothing presents it.** No
-   network-loss hook wires it to the Capacitor bridge. Either implement
-   the hook (`@capacitor/network` plugin + swap the root view controller
-   on a `WKWebView` load failure) or remove the dead file — right now it's
-   the same "looks done, isn't wired up" pattern this whole rewrite was
-   partly about fixing elsewhere.
+## Explicitly not built, on purpose
 
-3. **Push notifications register but nothing sends one.** `/api/register-
-   device` stores a token; nothing in `main.py` reads `data/devices.json`
-   and calls APNs when a price drop fires. Needs a `.p8` APNs key and a
-   sender (e.g. `PyAPNs2`) added to the Railway backend.
+- **Autonomous email contact** — asked for directly, declined as
+  specified. No reliable seller email exists on these platforms in the
+  first place, and even where one did, autonomous unsolicited contact at
+  scale raises real Spam Act and platform-ToS exposure, plus account-
+  flagging risk. Built the safer version instead: a human-reviewed
+  mailto: draft.
+- **Photo-based classification** — still the highest-leverage idea on
+  this list (the HW4 red-camera-lens tell is real and currently only
+  caught if a seller happens to type it out), but this sandbox can't
+  fetch real listing photos to calibrate or test against. Shipping an
+  uncalibrated heuristic with a confident-sounding label would be exactly
+  the problem this whole rewrite was trying to fix elsewhere. Worth
+  doing properly, with real photos to validate against, not blind.
+- **Home Screen widget** — needs a new Xcode target, which means hand-
+  editing `project.pbxproj`'s interlinked sections without Xcode's GUI.
+  Too high a risk of corrupting the project that's currently building
+  correctly, for something that can't be visually verified from here
+  anyway. Add this one in Xcode directly.
+- **Classification-aware saved searches** — not started. Reasonable next
+  piece if there's appetite for more: storage + matching logic is
+  straightforward, though actual delivery still depends on the push-
+  notification sender (see README/DEPLOY-IOS.md) which isn't wired up
+  either.
 
-4. **Legacy year-based HW guesses linger at lower confidence than they
-   display.** The v2.0 backfill only overwrote `hw_version` when
-   classify.py found real evidence; where it didn't, the old model-
-   year-only guess (the one with the Model S/X 2023+ bug) is still
-   sitting in the field with no confidence marker at all, since it
-   predates the confidence system. Worth a pass to either re-tag these
-   explicitly as `possible`/`unknown` or strip them so the UI doesn't
-   show an un-scored value next to scored ones.
+## Bugs / known gaps carried over from v2.0, still open
 
-## Features
-
-### Photo-based classification (the highest-leverage one)
-The HW4 tell — red-tinted camera lenses vs HW3's black ones — is
-currently only caught if a seller happens to mention "red camera" in
-text, which almost none do. Most listings have photos, though. A Vision/
-Core ML pass over listing images (front camera cluster crop → lens-colour
-classifier) would catch this reliably where text never will, and the
-same approach could spot an MCU2-era centre console vs MCU1's in an
-interior shot. This is the one feature that would most change how often
-the app can say "confirmed" instead of "unknown."
-
-### Ask-the-seller templates
-For every `mentioned_unclear` FSD classification, generate the exact
-question a buyer should send: *"Can you confirm via your Tesla app
-whether FSD shows as a one-off purchase or a monthly subscription?"*
-Turns an ambiguous classification into an actionable next step instead
-of a shrug.
-
-### Fair-price scoring
-`price_history.json` is already being collected per listing but never
-aggregated across listings. Compare a listing's price against others of
-the same model/year/HW-generation/FSD-status in the dataset and surface
-over/under-priced relative to comparable specs — not just "the price
-dropped," which is all the current alert system does.
-
-### Classification-aware saved searches
-Current alerts are price-drop-only. Extend to: "notify me of any HW4
-Model Y under $60k with FSD purchased outright" — filtering on the
-fields this app uniquely computes, not just price.
-
-### VIN cross-check
-If a listing exposes a VIN (some dealer listings do), decode model year/
-plant from the VIN structure itself and cross-check against the text-
-based classification — an independent signal to raise or lower
-confidence, rather than relying on ad text alone.
-
-### Home Screen widget
-Small WidgetKit extension showing the top new or most-recently-price-
-dropped listing. Native SwiftUI, so unlike the main app it would
-genuinely run through Apple's real Liquid Glass rendering, not a CSS
-approximation.
-
-### Community verification
-Let a user mark "I inspected this in person, MCU2 confirmed" on a
-listing — a lightweight trust layer on top of the automated
-classification, visible to anyone else looking at the same ad.
+1. Historical listings mostly lack free-text descriptions, capping how
+   often the classifier can say anything beyond "unknown."
+2. `OfflineViewController.swift` exists but nothing presents it.
+3. Push notifications register but nothing sends one server-side.
 
 ## Explicitly not planned
 Re-adding Facebook Marketplace or Pickles as sources — see README for
-why those were dropped in v2.0 rather than ported. Re-adding either
-would need a genuinely different, ToS-compliant approach, not a revert.
+why those were dropped in v2.0 rather than ported.
+
