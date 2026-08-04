@@ -1,5 +1,5 @@
 """
-Tesla FSD Finder Australia - FastAPI Backend v1.2
+Tesla FSD Finder Australia - FastAPI Backend v2.1
 ==================================================
 Serves the static frontend and provides API endpoints for listing data.
 Integrates with scrapers.py for multi-source data collection.
@@ -47,6 +47,10 @@ PRICE_HISTORY_FILE = DATA_DIR / "price_history.json"
 ALERTS_FILE = DATA_DIR / "alerts.json"
 
 SCRAPE_INTERVAL_HOURS = 6
+# Dealership scan (own websites of prestige/EV dealers, discovered via the
+# same Serper `site:` mechanism) runs far less often -- 48h -- because it's
+# slower, cheaper, and dealer inventory changes on that timescale anyway.
+DEALER_SCAN_INTERVAL_HOURS = 48
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("main")
@@ -80,7 +84,9 @@ def _normalise_listing(raw: dict, index: int) -> dict:
         "drive": "Drive", "autotrader": "AutoTrader",
         "gumtree": "Gumtree", "carsales": "Carsales",
         "carsguide": "CarsGuide", "pickles": "Pickles",
-        "facebook": "Facebook",
+        "facebook": "Facebook", "cars4sale": "Cars4Sale",
+        "trading post": "Trading Post", "shannons": "Shannons",
+        "grays": "Grays", "cargurus": "CarGurus",
     }.get(source_raw.lower(), source_raw.title())
 
     return {
@@ -124,6 +130,8 @@ def _normalise_listing(raw: dict, index: int) -> dict:
         "discovery_query": raw.get("discovery_query", ""),
         "detail_page_fetched": raw.get("detail_page_fetched", False),
         "source": source_display,
+        "source_group": raw.get("source_group", ""),
+        "dealer": raw.get("dealer"),
         "source_url": raw.get("source_url", ""),
         "seller_type": raw.get("seller_type", ""),
         "seller_name": raw.get("seller_name", ""),
@@ -305,10 +313,48 @@ async def _run_scrape():
 
 
 async def _scheduler():
-    """Run scraper every SCRAPE_INTERVAL_HOURS."""
+    """Run marketplace discovery every SCRAPE_INTERVAL_HOURS."""
     while True:
         await asyncio.sleep(SCRAPE_INTERVAL_HOURS * 3600)
         await _run_scrape()
+
+
+async def _dealer_scheduler():
+    """Run the dealership scan every DEALER_SCAN_INTERVAL_HOURS (48h)."""
+    while True:
+        await asyncio.sleep(DEALER_SCAN_INTERVAL_HOURS * 3600)
+        await _run_dealer_scan()
+
+
+async def _run_dealer_scan():
+    """Scan registered dealer websites and merge results into the dataset."""
+    global _last_scrape_status, _source_health
+    _last_scrape_status = "dealer_scan"
+    logger.info("Dealership scan starting...")
+    try:
+        from dealership_scan import scan_dealerships, get_dealer_summary
+        new_listings = await scan_dealerships()
+        if new_listings:
+            normalised = [
+                _normalise_listing(l, i) for i, l in enumerate(new_listings)
+            ]
+            _track_prices(normalised)
+            # Merge with existing marketplace listings (dealer sites are a
+            # supplement, not a replacement for the classifieds data).
+            merged = {l["id"]: l for l in _listings_cache}
+            for l in normalised:
+                merged[l["id"]] = l
+            _save_listings(list(merged.values()))
+            try:
+                from scrapers import get_source_health
+                _source_health = get_source_health(_listings_cache)
+            except ImportError:
+                pass
+        _last_scrape_status = "completed"
+        logger.info(f"Dealership scan done: {len(new_listings)} new listings; registry: {get_dealer_summary().get('total', 0)} dealers")
+    except Exception as e:
+        _last_scrape_status = "failed"
+        logger.error(f"Dealership scan failed: {e}")
 
 
 # ---------------------------------------------------------------------------
@@ -336,15 +382,23 @@ async def lifespan(app: FastAPI):
     except ImportError:
         pass
 
-    # Start background scheduler
+    # Start background schedulers: marketplace discovery (6h) and
+    # dealership scan (48h), independent so a slow dealer run never delays
+    # the classifieds refresh.
     task = asyncio.create_task(_scheduler())
+    dealer_task = asyncio.create_task(_dealer_scheduler())
 
     yield
 
     # Shutdown
     task.cancel()
+    dealer_task.cancel()
     try:
         await task
+    except asyncio.CancelledError:
+        pass
+    try:
+        await dealer_task
     except asyncio.CancelledError:
         pass
 
@@ -352,7 +406,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="Tesla FSD Finder Australia",
     description="Find underpriced Teslas with Full Self-Driving in Australia",
-    version="1.2.0",
+    version="2.1.0",
     lifespan=lifespan,
 )
 
@@ -388,7 +442,7 @@ async def health():
         "total_listings": len(_listings_cache),
         "last_updated": _last_updated,
         "scrape_status": _last_scrape_status,
-        "version": "1.2.0",
+        "version": "2.1.0",
     }
 
 
@@ -480,6 +534,11 @@ async def get_stats():
     fsd_total = confirmed + likely + possible
     hw4_count = sum(1 for l in _listings_cache if l.get("hw_version") == "HW4")
     drops_count = sum(1 for l in _listings_cache if l.get("price_dropped"))
+    try:
+        from dealership_scan import get_dealer_summary
+        dealer_count = get_dealer_summary().get("total", 0)
+    except Exception:
+        dealer_count = 0
 
     prices = [l["price"] for l in _listings_cache if (l.get("price") or 0) > 0]
     avg_price = int(sum(prices) / len(prices)) if prices else 0
@@ -517,6 +576,7 @@ async def get_stats():
         "likely": likely,
         "possible": possible,
         "hw4_count": hw4_count,
+        "dealer_count": dealer_count,
         "price_drops": drops_count,
         "avg_price": avg_price,
         "min_price": min_price,
@@ -587,6 +647,25 @@ async def refresh_listings(background_tasks: BackgroundTasks):
 async def refresh_from_disk():
     _load_listings()
     return {"status": "ok", "total": len(_listings_cache)}
+
+
+@app.get("/api/dealerships")
+async def get_dealerships():
+    """The dealership registry: total count, breakdown by state/category,
+    and the current list. Drives the 'Dealerships covered' stat in the UI
+    and is the human-checkable output of the self-growing scan."""
+    from dealership_scan import load_dealerships, get_dealer_summary
+    summary = get_dealer_summary()
+    summary["dealerships"] = load_dealerships()
+    return summary
+
+
+@app.post("/api/refresh-dealers")
+async def refresh_dealers(background_tasks: BackgroundTasks):
+    """Trigger a dealership scan immediately (background). Unlike /api/refresh
+    this merges into existing data rather than replacing it."""
+    background_tasks.add_task(_run_dealer_scan)
+    return {"status": "started", "message": "Dealership scan started in background"}
 
 
 # ---------------------------------------------------------------------------

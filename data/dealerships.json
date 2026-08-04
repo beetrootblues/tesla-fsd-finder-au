@@ -1,0 +1,454 @@
+{
+  "version": 3,
+  "last_updated": "2026-08-04T02:30:00.000000+00:00",
+  "dealerships": [
+    {
+      "name": "Zagame Automotive",
+      "domain": "zag.com.au",
+      "state": "VIC",
+      "city": "Melbourne",
+      "category": "prestige",
+      "source": "seed"
+    },
+    {
+      "name": "Nick Theodossi Prestige Cars",
+      "domain": "nicktheodossi.com.au",
+      "state": "VIC",
+      "city": "Melbourne",
+      "category": "prestige",
+      "source": "seed"
+    },
+    {
+      "name": "Autohaus Melbourne",
+      "domain": "autohaus.com.au",
+      "state": "VIC",
+      "city": "Melbourne",
+      "category": "prestige",
+      "source": "seed"
+    },
+    {
+      "name": "Mr Prestige Auto Sales",
+      "domain": "mrprestige.com.au",
+      "state": "QLD",
+      "city": "Brisbane",
+      "category": "prestige",
+      "source": "seed"
+    },
+    {
+      "name": "Prestige Automotive Group",
+      "domain": "prestigeautogroup.com.au",
+      "state": "QLD",
+      "city": "Gold Coast",
+      "category": "prestige",
+      "source": "seed"
+    },
+    {
+      "name": "Prestige Auto Traders",
+      "domain": "prestigeautotraders.com.au",
+      "state": "NSW",
+      "city": "Sydney",
+      "category": "prestige",
+      "source": "seed"
+    },
+    {
+      "name": "Cars4Us",
+      "domain": "cars4us.com.au",
+      "state": "NSW",
+      "city": "Sydney",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "Evolve Motors",
+      "domain": "evolvemotors.com.au",
+      "state": "VIC",
+      "city": "Melbourne",
+      "category": "ev",
+      "source": "seed"
+    },
+    {
+      "name": "EV Auto Australia",
+      "domain": "evauto.com.au",
+      "state": "NSW",
+      "city": "Sydney",
+      "category": "ev",
+      "source": "seed"
+    },
+    {
+      "name": "Dutton One",
+      "domain": "duttonone.com.au",
+      "state": "NSW",
+      "city": "Sydney",
+      "category": "prestige",
+      "source": "seed"
+    },
+    {
+      "name": "Autosports Group",
+      "domain": "autosportsgroup.com.au",
+      "state": "VIC",
+      "city": "Melbourne",
+      "category": "group",
+      "source": "seed"
+    },
+    {
+      "name": "Peter Warren Automotive",
+      "domain": "peterwarren.com.au",
+      "state": "NSW",
+      "city": "Sydney",
+      "category": "group",
+      "source": "seed"
+    },
+    {
+      "name": "Alto Group",
+      "domain": "altogroup.com.au",
+      "state": "NSW",
+      "city": "Sydney",
+      "category": "group",
+      "source": "seed"
+    },
+    {
+      "name": "Motorama",
+      "domain": "motorama.com.au",
+      "state": "QLD",
+      "city": "Brisbane",
+      "category": "group",
+      "source": "seed"
+    },
+    {
+      "name": "Eagers Automotive",
+      "domain": "eagersautomotive.com.au",
+      "state": "QLD",
+      "city": "Brisbane",
+      "category": "group",
+      "source": "seed"
+    },
+    {
+      "name": "Tesla Certified Pre-Owned",
+      "domain": "tesla.com",
+      "state": "national",
+      "city": "Australia",
+      "category": "oem",
+      "source": "seed"
+    },
+    {
+      "name": "Tony Lahood Motors",
+      "domain": "tonylahoodmotors.com.au",
+      "state": "NSW",
+      "city": "Sydney",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "Westside Auto",
+      "domain": "westsideauto.com.au",
+      "state": "NSW",
+      "city": "Sydney",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "EasyAuto123",
+      "domain": "easyauto123.com.au",
+      "state": "NSW",
+      "city": "Sydney",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "Carma",
+      "domain": "carma.com.au",
+      "state": "VIC",
+      "city": "Melbourne",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "MR Car Sydney",
+      "domain": "mrcarsydney.com.au",
+      "state": "NSW",
+      "city": "Sydney",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "Blue Chip Auto",
+      "domain": "bluechipauto.com.au",
+      "state": "NSW",
+      "city": "Sydney",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "Sydney Prestige Motors",
+      "domain": "sydneyprestigemotors.com.au",
+      "state": "NSW",
+      "city": "Sydney",
+      "category": "prestige",
+      "source": "seed"
+    },
+    {
+      "name": "Auto Mega Warehouse",
+      "domain": "automegawarehouse.com.au",
+      "state": "NSW",
+      "city": "Sydney",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "Victoria Car Sales",
+      "domain": "victoriacars.com.au",
+      "state": "VIC",
+      "city": "Melbourne",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "CAS Auto (Cars at Southbank)",
+      "domain": "carsatsouthbank.com.au",
+      "state": "VIC",
+      "city": "Melbourne",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "JZ Motors",
+      "domain": "jzmotors.com.au",
+      "state": "VIC",
+      "city": "Melbourne",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "King of Cars",
+      "domain": "kingofcars.com.au",
+      "state": "NSW",
+      "city": "Sydney",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "Melbourne Motor Sales",
+      "domain": "melbournemotorsales.com.au",
+      "state": "VIC",
+      "city": "Melbourne",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "Melbourne Online Motors",
+      "domain": "melbourneonlinemotors.com.au",
+      "state": "VIC",
+      "city": "Melbourne",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "Top Used Cars",
+      "domain": "topusedcars.com.au",
+      "state": "NSW",
+      "city": "Sydney",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "Canberra Fleet & Wholesale Centre",
+      "domain": "cfwc.com.au",
+      "state": "ACT",
+      "city": "Canberra",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "Canberry Cars",
+      "domain": "canberrycars.com.au",
+      "state": "ACT",
+      "city": "Canberra",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "Kardinia Park Car Sales",
+      "domain": "kardiniaparkcarsales.com.au",
+      "state": "VIC",
+      "city": "Geelong",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "AutoMaster Car Sales",
+      "domain": "automastercarsales.com.au",
+      "state": "VIC",
+      "city": "Geelong",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "Davey Motor Group",
+      "domain": "daveymotorgroup.com.au",
+      "state": "VIC",
+      "city": "Melbourne",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "The Car Ranch",
+      "domain": "thecarranch.com.au",
+      "state": "VIC",
+      "city": "Geelong",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "Starr Motors",
+      "domain": "starrmotors.com.au",
+      "state": "VIC",
+      "city": "Geelong",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "Major Car Sales",
+      "domain": "majorcarsales.com.au",
+      "state": "VIC",
+      "city": "Melbourne",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "Klosters",
+      "domain": "klosters.com.au",
+      "state": "NSW",
+      "city": "Sydney",
+      "category": "prestige",
+      "source": "seed"
+    },
+    {
+      "name": "Tynan Motors",
+      "domain": "tynan.com.au",
+      "state": "NSW",
+      "city": "Sydney",
+      "category": "group",
+      "source": "seed"
+    },
+    {
+      "name": "Tony White Group",
+      "domain": "tonywhitegroup.com.au",
+      "state": "NSW",
+      "city": "Newcastle",
+      "category": "group",
+      "source": "seed"
+    },
+    {
+      "name": "Frizelle Sunshine Automotive",
+      "domain": "frizellesunshine.com.au",
+      "state": "QLD",
+      "city": "Gold Coast",
+      "category": "group",
+      "source": "seed"
+    },
+    {
+      "name": "Inchcape Australia",
+      "domain": "inchcape.com.au",
+      "state": "VIC",
+      "city": "Melbourne",
+      "category": "group",
+      "source": "seed"
+    },
+    {
+      "name": "John Hughes Group",
+      "domain": "johnhughes.com.au",
+      "state": "WA",
+      "city": "Perth",
+      "category": "group",
+      "source": "seed"
+    },
+    {
+      "name": "CarCity",
+      "domain": "carcity.com.au",
+      "state": "NSW",
+      "city": "Sydney",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "A1 Autos",
+      "domain": "a1autos.com.au",
+      "state": "NSW",
+      "city": "Sydney",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "Dustin's Autos",
+      "domain": "dustinsautos.com.au",
+      "state": "NT",
+      "city": "Darwin",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "Somerton Car Sales",
+      "domain": "somertoncarsales.com.au",
+      "state": "SA",
+      "city": "Adelaide",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "John McGrath Auto Group",
+      "domain": "mcgrathautogroup.com.au",
+      "state": "ACT",
+      "city": "Canberra",
+      "category": "group",
+      "source": "seed"
+    },
+    {
+      "name": "Darwin Motor Group",
+      "domain": "darwinmotorgroup.com.au",
+      "state": "NT",
+      "city": "Darwin",
+      "category": "group",
+      "source": "seed"
+    },
+    {
+      "name": "Cars Connect Newcastle",
+      "domain": "carsconnect.com.au",
+      "state": "NSW",
+      "city": "Newcastle",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "Car Dealerz",
+      "domain": "cardealerz.com.au",
+      "state": "NSW",
+      "city": "Newcastle",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "Corban Automotive",
+      "domain": "corbanauto.com.au",
+      "state": "NSW",
+      "city": "Wollongong",
+      "category": "prestige",
+      "source": "seed"
+    },
+    {
+      "name": "D & N Car Sales",
+      "domain": "dncarsales.com.au",
+      "state": "NSW",
+      "city": "Wollongong",
+      "category": "used",
+      "source": "seed"
+    },
+    {
+      "name": "Coastal Cars Select",
+      "domain": "coastalcarsselect.com.au",
+      "state": "QLD",
+      "city": "Sunshine Coast",
+      "category": "used",
+      "source": "seed"
+    }
+  ]
+}

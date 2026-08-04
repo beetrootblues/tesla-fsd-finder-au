@@ -28,7 +28,6 @@
   --radius-lg: 16px;
   --header-height: 60px;
   --sidebar-width: 280px;
-  --banner-height: 40px;
   --mobile-nav-height: 60px;
   /* Glass tokens -- a CSS approximation of Apple's Liquid Glass material,
      used only on chrome that floats over scrolling content (header, sticky
@@ -79,46 +78,6 @@ body {
 a { color: var(--accent); text-decoration: none; }
 a:hover { color: var(--accent-hover); }
 
-/* ---------- FSD Deadline Banner ---------- */
-.fsd-banner {
-  background: linear-gradient(135deg, #e82127, #ff6b35);
-  color: #fff;
-  font-size: 13px;
-  height: var(--banner-height);
-  display: flex;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1100;
-}
-.fsd-banner-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-}
-.fsd-banner-text { flex: 1; }
-.fsd-countdown {
-  font-weight: 700;
-  background: rgba(255,255,255,.2);
-  padding: 2px 8px;
-  border-radius: 4px;
-  margin-left: 6px;
-  white-space: nowrap;
-}
-.fsd-banner-close {
-  background: none;
-  border: none;
-  color: rgba(255,255,255,.8);
-  cursor: pointer;
-  padding: 4px;
-  font-size: 14px;
-}
-.fsd-banner-close:hover { color: #fff; }
-
 /* ---------- Header ---------- */
 .app-header {
   height: var(--header-height);
@@ -128,7 +87,7 @@ a:hover { color: var(--accent-hover); }
   border-bottom: 1px solid var(--glass-border);
   position: relative;
   position: sticky;
-  top: var(--banner-height);
+  top: 0;
   z-index: 1000;
   box-shadow: var(--shadow-sm);
 }
@@ -148,8 +107,6 @@ a:hover { color: var(--accent-hover); }
   .app-header { backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--bg-secondary); }
   .app-header::after { display: none; }
 }
-.fsd-banner.d-none + .app-header { top: 0; }
-
 .header-inner {
   max-width: 1800px;
   margin: 0 auto;
@@ -819,6 +776,135 @@ a:hover { color: var(--accent-hover); }
 .source-carsguide { border-top: 3px solid #9c27b0; }
 .source-pickles { border-top: 3px solid #607d8b; }
 .source-facebook { border-top: 3px solid #1877f2; }
+.source-cars4sale { border-top: 3px solid #00bcd4; }
+.source-trading-post { border-top: 3px solid #795548; }
+.source-shannons { border-top: 3px solid #e91e63; }
+.source-grays { border-top: 3px solid #455a64; }
+
+/* Dealer-site listings: distinct accent so prestige/EV dealer cars stand
+   out from marketplace listings in every view. */
+.source-dealer { border-top: 3px solid #e82127; }
+.badge-dealer {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--accent-muted);
+  color: var(--accent);
+  border: 1px solid rgba(232, 33, 39, 0.35);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.pill-dealer { border-color: var(--accent) !important; color: var(--accent) !important; }
+.pill-dealer.active { background: var(--accent); color: #fff !important; }
+.pill-cars4sale { border-color: #00bcd4 !important; color: #00bcd4 !important; }
+.pill-cars4sale.active { background: #00bcd4; color: #fff !important; }
+.pill-tradingpost { border-color: #795548 !important; color: #795548 !important; }
+.pill-tradingpost.active { background: #795548; color: #fff !important; }
+.pill-shannons { border-color: #e91e63 !important; color: #e91e63 !important; }
+.pill-shannons.active { background: #e91e63; color: #fff !important; }
+.pill-grays { border-color: #455a64 !important; color: #455a64 !important; }
+.pill-grays.active { background: #455a64; color: #fff !important; }
+.stat-dealers { color: var(--accent); }
 
 /* ---------- Utilities ---------- */
 .text-muted { color: var(--text-muted) !important; }
+
+/* ==========================================================================
+   v2.0 polish -- motion, hover states, focus rings
+   ========================================================================== */
+
+/* Page backdrop: a whisper of the Tesla-red accent bleeding in at the top,
+   kept far below the noise floor so cards still own the contrast. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 340px;
+  background:
+    radial-gradient(900px 300px at 15% -10%, var(--accent-muted), transparent 70%),
+    radial-gradient(700px 260px at 85% -20%, rgba(59, 130, 246, 0.08), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.app-body { position: relative; z-index: 1; }
+
+/* Cards: lift + glow on hover, but skip it for anyone who asked for less
+   motion -- a static border shift is enough there. */
+.listing-card {
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.listing-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--glass-border);
+}
+@media (prefers-reduced-motion: reduce) {
+  .listing-card:hover { transform: none; }
+}
+
+/* Buttons & pills: smooth interactive states. */
+.btn-icon,
+.view-btn,
+.source-pill,
+.btn-compare,
+.card-watch-btn,
+.mobile-nav-item,
+.btn-view,
+.btn-view-sm {
+  transition: color .15s ease, background-color .15s ease, border-color .15s ease, transform .15s ease, opacity .15s ease;
+}
+.btn-icon:active,
+.view-btn:active,
+.source-pill:active,
+.btn-compare:active,
+.card-watch-btn:active { transform: scale(.92); }
+.btn-icon:hover { color: var(--accent); }
+
+/* Focus rings for keyboard navigation -- visible on every theme. */
+:where(button, a, input, select, summary):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Badge shimmer for the FSD-transfer pills: a faint highlight sweep that
+   draws the eye to the badge that matters most on the card. */
+.badge-fsd {
+  position: relative;
+  overflow: hidden;
+}
+.badge-fsd::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -60%;
+  width: 50%; height: 100%;
+  background: linear-gradient(105deg, transparent, rgba(255,255,255,.18), transparent);
+  transform: skewX(-20deg);
+  animation: badge-shimmer 3.2s ease-in-out infinite;
+}
+@keyframes badge-shimmer {
+  0%, 60% { left: -60%; }
+  100% { left: 120%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .badge-fsd::after { display: none; }
+}
+
+/* Loading state: keep the pulse but make it feel deliberate. */
+.state-message { animation: state-fade .25s ease; }
+@keyframes state-fade {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* View toggle: active button gets the accent treatment. */
+.view-btn.active {
+  background: var(--accent-muted);
+  color: var(--accent);
+}
+
+/* Scrollbar already styled above; keep the thumb slightly wider on hover. */
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }

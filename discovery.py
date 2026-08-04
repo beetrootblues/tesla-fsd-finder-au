@@ -59,7 +59,41 @@ USER_AGENT = (
     "personal research tool, low volume, contact via GitHub issues)"
 )
 
-SITES = ["carsales.com.au", "gumtree.com.au", "drive.com.au", "carsguide.com.au"]
+# Expanded in v2.1: the four original marketplaces plus the remaining
+# major Australian classifieds/auction platforms, all discovered via the
+# same legitimate `site:` SERP search (never direct scraping -- see the
+# module docstring). Facebook Marketplace is best-effort: Google indexes
+# some public marketplace listings, so a `site:` search is the only
+# ToS-compliant way to discover them; most will fall back to snippet-only
+# classification, which is fine.
+SITES = [
+    "carsales.com.au",
+    "gumtree.com.au",
+    "drive.com.au",
+    "carsguide.com.au",
+    "cars4sale.com.au",
+    "tradingpost.com.au",
+    "autotrader.com.au",
+    "shannons.com.au",
+    "grays.com.au",
+    "facebook.com/marketplace",
+]
+
+# Display names -- facebook.com/marketplace and cars4sale don't clean up
+# with .capitalize(), so map them explicitly.
+SOURCE_DISPLAY = {
+    "carsales.com.au": "Carsales",
+    "gumtree.com.au": "Gumtree",
+    "drive.com.au": "Drive",
+    "carsguide.com.au": "CarsGuide",
+    "cars4sale.com.au": "Cars4Sale",
+    "tradingpost.com.au": "Trading Post",
+    "autotrader.com.au": "AutoTrader",
+    "shannons.com.au": "Shannons",
+    "grays.com.au": "Grays",
+    "facebook.com/marketplace": "Facebook",
+}
+
 MODELS = [("S", "Tesla Model S"), ("3", "Tesla Model 3"), ("X", "Tesla Model X"), ("Y", "Tesla Model Y")]
 
 MAX_DETAIL_FETCHES = int(os.environ.get("MAX_DETAIL_FETCHES", "60"))
@@ -177,7 +211,7 @@ async def run_discovery() -> list[dict]:
                 detail_fetches += 1
 
             listing = listing_utils.make_listing(
-                source=site.replace(".com.au", "").capitalize(),
+                source=SOURCE_DISPLAY.get(site, site.replace(".com.au", "").capitalize()),
                 source_url=url,
                 title=title,
                 snippet=snippet,

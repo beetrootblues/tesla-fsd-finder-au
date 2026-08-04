@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Tesla FSD Finder Australia v1.2 - Application Logic
+   Tesla FSD Finder Australia v2.0 - Application Logic
    Vanilla ES6+ - No framework dependencies
    ========================================================================== */
 
@@ -41,6 +41,7 @@ const dom = {
   statTotal: $('#statTotal'),
   statConfirmed: $('#statConfirmed'),
   statHW4: $('#statHW4'),
+  statDealers: $('#statDealers'),
   statDrops: $('#statDrops'),
   lastUpdated: $('#lastUpdated'),
   showingCount: $('#showingCount'),
@@ -87,10 +88,16 @@ const dom = {
   watchlistClose: $('#watchlistClose'),
   statsDashboard: $('#statsDashboard'),
   mobileNav: $('#mobileNav'),
-  fsdBanner: $('#fsdBanner'),
-  fsdCountdown: $('#fsdCountdown'),
-  fsdBannerClose: $('#fsdBannerClose'),
 };
+
+// ---------------------------------------------------------------------------
+// API base -- same-origin on web (config.js sets ''), absolute URL in the
+// bundled Capacitor apps so the native app can reach a deployed backend.
+// ---------------------------------------------------------------------------
+function apiUrl(path) {
+  const base = window.API_BASE || '';
+  return base + path;
+}
 
 // ---------------------------------------------------------------------------
 // Formatters
@@ -273,7 +280,7 @@ async function submitVerification(listingId, buttonEl) {
   buttonEl.disabled = true;
   buttonEl.textContent = 'Saving...';
   try {
-    const res = await fetch(`/api/verify/${listingId}?field=${encodeURIComponent(field)}&confirmed_value=${encodeURIComponent(value)}`, { method: 'POST' });
+    const res = await fetch(apiUrl(`/api/verify/${listingId}?field=${encodeURIComponent(field)}&confirmed_value=${encodeURIComponent(value)}`), { method: 'POST' });
     if (!res.ok) throw new Error('failed');
     await fetchListings();
   } catch (e) {
@@ -290,6 +297,13 @@ function fsdIcon(status) {
 
 function sourceClass(source) {
   return 'source-' + (source || 'unknown').toLowerCase().replace(/\s+/g, '-');
+}
+
+function cardSourceClass(listing) {
+  // Dealer-site listings (source_group === 'Dealer') get the shared
+  // source-dealer accent regardless of the individual dealer's name.
+  if ((listing.source_group || '').toLowerCase() === 'dealer') return 'source-dealer';
+  return sourceClass(listing.source);
 }
 
 function escapeHtml(str) {
@@ -317,8 +331,20 @@ const SOURCE_COLOURS = {
   carsguide: '#9c27b0',
   pickles: '#607d8b',
   facebook: '#1877f2',
+  cars4sale: '#00bcd4',
+  'trading post': '#795548',
+  shannons: '#e91e63',
+  grays: '#455a64',
+  dealer: '#e82127',
   unknown: '#757575',
 };
+
+function getSourceGroup(listing) {
+  // Dealer-site listings carry source_group='Dealer'; everything else is
+  // classified by its own source name. Used so the 'Dealer sites' pill can
+  // match any dealer name without hard-coding each one.
+  return listing.source_group || listing.source || '';
+}
 
 function getSourceColour(source) {
   return SOURCE_COLOURS[(source || '').toLowerCase()] || SOURCE_COLOURS.unknown;
@@ -329,7 +355,7 @@ function getSourceColour(source) {
 // ---------------------------------------------------------------------------
 async function fetchListings() {
   try {
-    const resp = await fetch('/api/listings');
+    const resp = await fetch(apiUrl('/api/listings'));
     const data = await resp.json();
     state.allListings = data.listings || [];
     return state.allListings;
@@ -341,7 +367,7 @@ async function fetchListings() {
 
 async function fetchStats() {
   try {
-    const resp = await fetch('/api/stats');
+    const resp = await fetch(apiUrl('/api/stats'));
     state.stats = await resp.json();
     return state.stats;
   } catch (e) {
@@ -353,14 +379,14 @@ async function fetchStats() {
 async function triggerRefresh() {
   try {
     dom.btnRefresh.classList.add('spinning');
-    const resp = await fetch('/api/refresh', { method: 'POST' });
+    const resp = await fetch(apiUrl('/api/refresh'), { method: 'POST' });
     const data = await resp.json();
     if (data.status === 'started') {
       // Poll for completion
       let attempts = 0;
       const poll = setInterval(async () => {
         attempts++;
-        const h = await fetch('/api/health');
+        const h = await fetch(apiUrl('/api/health'));
         const hd = await h.json();
         if (hd.scrape_status !== 'running' || attempts > 60) {
           clearInterval(poll);
@@ -424,8 +450,13 @@ function applyFilters() {
     results = results.filter(r => f.mcuVersions.includes(r.mcu_version || 'unknown'));
   if (f.sellerTypes.length && f.sellerTypes.length < 3)
     results = results.filter(r => f.sellerTypes.map(s=>s.toLowerCase()).includes((r.seller_type||'').toLowerCase()));
-  if (f.source !== 'all')
-    results = results.filter(r => (r.source || '').toLowerCase() === f.source);
+  if (f.source !== 'all') {
+    if (f.source === 'dealer') {
+      results = results.filter(r => (getSourceGroup(r) || '').toLowerCase() === 'dealer');
+    } else {
+      results = results.filter(r => (r.source || '').toLowerCase() === f.source);
+    }
+  }
   if (f.yearMin) results = results.filter(r => (r.year || 0) >= f.yearMin);
   if (f.yearMax) results = results.filter(r => (r.year || 9999) <= f.yearMax);
   if (f.minPrice) results = results.filter(r => (r.price || 0) >= f.minPrice);
@@ -517,7 +548,7 @@ function renderCards(listings) {
       : '';
 
     return `
-      <article class="listing-card ${sourceClass(l.source)}" data-id="${l.id}">
+      <article class="listing-card ${cardSourceClass(l)}" data-id="${l.id}">
         <div class="card-image-wrap">
           ${l.image_url
             ? `<img src="${escapeHtml(l.image_url)}" alt="${escapeHtml(l.title)}" class="card-image" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect fill=%22%23333%22 width=%22400%22 height=%22300%22/><text x=%22200%22 y=%22160%22 fill=%22%23666%22 font-size=%2220%22 text-anchor=%22middle%22>No Image</text></svg>'" />`
@@ -554,6 +585,7 @@ function renderCards(listings) {
             ${l.mcu_version ? `<span class="badge-mcu">${l.mcu_version}</span>` : ''}
             ${l.supercharging_status === 'unlimited_transferable_claimed' ? `<span class="badge-usc"><i class="bi bi-lightning-charge-fill"></i> Unlimited SC claimed</span>` : ''}
             ${l.seller_type ? `<span class="badge-seller badge-seller-${l.seller_type.toLowerCase()}">${l.seller_type}</span>` : ''}
+            ${l.dealer ? `<span class="badge-dealer"><i class="bi bi-shop"></i> ${escapeHtml(l.dealer.name)}</span>` : ''}
           </div>
           ${(l.classification_warnings && l.classification_warnings.length) ? `<div class="card-warning"><i class="bi bi-exclamation-triangle-fill"></i><span>${escapeHtml(l.classification_warnings.join(' \u00b7 '))}</span></div>` : ''}
           ${renderDetailsSection(l)}
@@ -718,6 +750,7 @@ function updateStats(stats) {
   dom.statTotal.textContent = stats.total_listings || 0;
   dom.statConfirmed.textContent = stats.fsd_total || 0;
   dom.statHW4.textContent = stats.hw4_count || 0;
+  if (dom.statDealers) dom.statDealers.textContent = stats.dealer_count || 0;
   if (dom.statDrops) dom.statDrops.textContent = stats.price_drops || 0;
   if (dom.lastUpdated && stats.last_updated) {
     dom.lastUpdated.textContent = 'Updated ' + timeAgo(stats.last_updated);
@@ -995,42 +1028,6 @@ function updateThemeIcon(theme) {
 }
 
 // ---------------------------------------------------------------------------
-// FSD Deadline countdown
-// ---------------------------------------------------------------------------
-function initFsdBanner() {
-  const dismissed = localStorage.getItem('fsd_banner_dismissed');
-  if (dismissed === 'true') {
-    dom.fsdBanner?.classList.add('d-none');
-    return;
-  }
-
-  function updateCountdown() {
-    const deadline = new Date('2026-03-31T23:59:59+11:00'); // AEDT
-    const now = new Date();
-    const diff = deadline - now;
-
-    if (diff <= 0) {
-      if (dom.fsdCountdown) dom.fsdCountdown.textContent = 'Deadline passed!';
-      return;
-    }
-
-    const days = Math.floor(diff / 86400000);
-    const hours = Math.floor((diff % 86400000) / 3600000);
-    if (dom.fsdCountdown) {
-      dom.fsdCountdown.textContent = `${days}d ${hours}h remaining`;
-    }
-  }
-
-  updateCountdown();
-  setInterval(updateCountdown, 60000);
-
-  dom.fsdBannerClose?.addEventListener('click', () => {
-    dom.fsdBanner?.classList.add('d-none');
-    localStorage.setItem('fsd_banner_dismissed', 'true');
-  });
-}
-
-// ---------------------------------------------------------------------------
 // Render orchestrator
 // ---------------------------------------------------------------------------
 function render() {
@@ -1158,7 +1155,7 @@ const NativeBridge = {
       console.log('[NativeBridge] Push token:', token.value.substring(0, 12) + '...');
       // Register with backend
       try {
-        await fetch(`/api/register-device?token=${encodeURIComponent(token.value)}&platform=ios&alerts_enabled=true`, {
+        await fetch(apiUrl(`/api/register-device?token=${encodeURIComponent(token.value)}&platform=ios&alerts_enabled=true`), {
           method: 'POST'
         });
       } catch (err) {
@@ -1268,7 +1265,6 @@ const NativeBridge = {
 async function init() {
   showLoading();
   initTheme();
-  initFsdBanner();
   loadWatchlist();
 
   // Initialize native bridge if on iOS
@@ -1284,7 +1280,7 @@ async function init() {
   // Update badge with alert count on native
   if (state.isNative) {
     try {
-      const alertRes = await fetch('/api/alerts?limit=10');
+      const alertRes = await fetch(apiUrl('/api/alerts?limit=10'));
       if (alertRes.ok) {
         const alertData = await alertRes.json();
         const unread = (alertData.alerts || []).filter(a => !a.seen).length;

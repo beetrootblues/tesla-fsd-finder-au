@@ -58,6 +58,19 @@ not a generic feature wishlist. Status as of the V2 implementation pass.
 3. Push notifications register but nothing sends one server-side.
 
 ## Explicitly not planned
-Re-adding Facebook Marketplace or Pickles as sources — see README for
-why those were dropped in v2.0 rather than ported.
+- **Pickles auctions** — salvage/insurance write-offs are a poor fit for
+  "confirm what's actually driveable and road legal". Still not planned.
+- **Facebook Marketplace scraping** — direct scraping remains off-limits
+  under Meta's ToS. Since v2.1 we *do* run a best-effort `site:` SERP
+  search for `facebook.com/marketplace` (the same legitimate discovery
+  mechanism used everywhere else, not scraping) — expect most results to
+  be snippet-only since Meta blocks detail fetches.
+
+## Shipped in v2.1
+- Expanded marketplace discovery to 10 sources (added Cars4Sale, Trading
+  Post, Shannons, Grays, Facebook best-effort)
+- **Dealership scanner** (`dealership_scan.py`): every-48h `site:` scan of
+  a self-growing registry of prestige/EV dealer websites, so dealer-only
+  listings that never reach Carsales/Drive get caught. Registry auto-grows
+  from discovered domains each run.
 

@@ -4,22 +4,32 @@
   "description": "Tesla FSD Finder Australia - Find underpriced Teslas with Full Self-Driving",
   "private": true,
   "scripts": {
+    "postinstall": "(command -v pip >/dev/null 2>&1 && pip install -r requirements.txt) || echo '[postinstall] pip not available; skipping Python deps'",
+    "start": "python3 -m pip install -q -r requirements.txt >/dev/null 2>&1 || true; uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}",
+    "dev": "python3 -m pip install -q -r requirements.txt >/dev/null 2>&1 || true; uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}",
+    "preview": "python3 -m pip install -q -r requirements.txt >/dev/null 2>&1 || true; uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}",
+    "build": "python3 -c \"import main; print('build ok: app imports cleanly')\"",
     "build:ios": "./scripts/build-ios.sh",
-    "cap:sync": "npx cap sync ios",
+    "build:android": "npx cap sync android && cd android && ./gradlew assembleDebug",
+    "apk": "npx cap sync android && cd android && ./gradlew assembleDebug && cp app/build/outputs/apk/debug/app-debug.apk ../dist/TeslaFSDFinderAU-debug.apk",
+    "cap:sync": "npx cap sync",
+    "cap:sync:ios": "npx cap sync ios",
+    "cap:sync:android": "npx cap sync android",
     "cap:open": "npx cap open ios",
-    "icons": "npx capacitor-assets generate --iconBackgroundColor '#0a0e1a' --splashBackgroundColor '#0a0e1a' --ios"
+    "icons": "npx capacitor-assets generate --iconBackgroundColor '#0a0e1a' --splashBackgroundColor '#0a0e1a'"
   },
   "dependencies": {
-    "@capacitor/core": "^6.0.0",
-    "@capacitor/ios": "^6.0.0",
+    "@capacitor/android": "^6.0.0",
     "@capacitor/app": "^6.0.0",
-    "@capawesome/capacitor-badge": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
     "@capacitor/haptics": "^6.0.0",
+    "@capacitor/ios": "^6.0.0",
     "@capacitor/network": "^6.0.0",
     "@capacitor/push-notifications": "^6.0.0",
     "@capacitor/share": "^6.0.0",
     "@capacitor/splash-screen": "^6.0.0",
-    "@capacitor/status-bar": "^6.0.0"
+    "@capacitor/status-bar": "^6.0.0",
+    "@capawesome/capacitor-badge": "^6.0.0"
   },
   "devDependencies": {
     "@capacitor/cli": "^6.0.0",

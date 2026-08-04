@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Find underpriced Teslas with Full Self-Driving (FSD) capability in Australia. Search Carsales, Drive, Gumtree, AutoTrader, CarsGuide, Pickles and more." />
-  <title>Tesla FSD Finder Australia v1.2</title>
+  <meta name="description" content="Find underpriced Teslas with Full Self-Driving (FSD), transferable Supercharging and the right Autopilot hardware across Australia's car marketplaces." />
+  <meta name="theme-color" content="#0d1117" />
+  <title>Tesla FSD Finder Australia</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,25 +25,13 @@
   <!-- App Stylesheet -->
   <link rel="stylesheet" href="/static/style.css" />
 
+  <!-- Runtime config (API base) -->
+  <script src="/static/config.js"></script>
+
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23e82127'/><text x='16' y='23' font-family='Arial' font-size='18' font-weight='bold' fill='white' text-anchor='middle'>T</text></svg>" />
 </head>
 <body>
-
-  <!-- ===== FSD DEADLINE BANNER ===== -->
-  <div class="fsd-banner" id="fsdBanner">
-    <div class="fsd-banner-inner">
-      <i class="bi bi-exclamation-triangle-fill"></i>
-      <span class="fsd-banner-text">
-        <strong>FSD One-Time Purchase Ending!</strong>
-        After March 31, 2026 FSD goes subscription-only ($149/mo).
-        <span class="fsd-countdown" id="fsdCountdown"></span>
-      </span>
-      <button class="fsd-banner-close" id="fsdBannerClose" aria-label="Close banner">
-        <i class="bi bi-x-lg"></i>
-      </button>
-    </div>
-  </div>
 
   <!-- ===== HEADER ===== -->
   <header class="app-header" id="appHeader">
@@ -76,25 +65,28 @@
         </div>
       </div>
 
-      <div class="header-right">
-        <div class="header-stats d-none d-md-flex">
-          <div class="stat-chip">
-            <span class="stat-value" id="statTotal">--</span>
-            <span class="stat-label">Listings</span>
+      <div class="header-right">          <div class="header-stats d-none d-md-flex">
+            <div class="stat-chip">
+              <span class="stat-value" id="statTotal">--</span>
+              <span class="stat-label">Listings</span>
+            </div>
+            <div class="stat-chip stat-fsd">
+              <span class="stat-value" id="statConfirmed">--</span>
+              <span class="stat-label">FSD</span>
+            </div>
+            <div class="stat-chip stat-hw4">
+              <span class="stat-value" id="statHW4">--</span>
+              <span class="stat-label">HW4</span>
+            </div>
+            <div class="stat-chip stat-dealers">
+              <span class="stat-value" id="statDealers">--</span>
+              <span class="stat-label">Dealers</span>
+            </div>
+            <div class="stat-chip stat-drops">
+              <span class="stat-value" id="statDrops">--</span>
+              <span class="stat-label">Drops</span>
+            </div>
           </div>
-          <div class="stat-chip stat-fsd">
-            <span class="stat-value" id="statConfirmed">--</span>
-            <span class="stat-label">FSD</span>
-          </div>
-          <div class="stat-chip stat-hw4">
-            <span class="stat-value" id="statHW4">--</span>
-            <span class="stat-label">HW4</span>
-          </div>
-          <div class="stat-chip stat-drops">
-            <span class="stat-value" id="statDrops">--</span>
-            <span class="stat-label">Drops</span>
-          </div>
-        </div>
         <button class="btn-icon" id="themeToggle" aria-label="Toggle theme">
           <i class="bi bi-moon-fill" id="themeIcon"></i>
         </button>
@@ -126,12 +118,16 @@
           <label class="filter-label">Source</label>
           <div class="source-pills" id="filterSource">
             <button class="source-pill active" data-source="all">All</button>
+            <button class="source-pill pill-dealer" data-source="dealer">Dealer sites</button>
             <button class="source-pill pill-carsales" data-source="carsales">Carsales</button>
             <button class="source-pill pill-drive" data-source="drive">Drive</button>
             <button class="source-pill pill-autotrader" data-source="autotrader">AutoTrader</button>
             <button class="source-pill pill-gumtree" data-source="gumtree">Gumtree</button>
             <button class="source-pill pill-carsguide" data-source="carsguide">CarsGuide</button>
-            <button class="source-pill pill-pickles" data-source="pickles">Pickles</button>
+            <button class="source-pill pill-cars4sale" data-source="cars4sale">Cars4Sale</button>
+            <button class="source-pill pill-tradingpost" data-source="trading post">Trading Post</button>
+            <button class="source-pill pill-shannons" data-source="shannons">Shannons</button>
+            <button class="source-pill pill-grays" data-source="grays">Grays</button>
             <button class="source-pill pill-facebook" data-source="facebook">Facebook</button>
           </div>
         </div>

@@ -12,7 +12,7 @@ Tesla's FSD option and older transferable Supercharging can add real value, but 
 
 | Metric | Value |
 |--------|-------|
-| Data Sources | Carsales, Drive, Gumtree, CarsGuide -- discovered via search, not direct scraping |
+| Data Sources | 10 AU classifieds + every-48h scan of 56 dealership websites -- discovered via search, not direct scraping |
 | Classification | 4-tier confidence scoring (Confirmed / Likely / Possible / Unknown), every field carries its evidence |
 | FSD Transfer Clarity | Distinguishes purchased-outright (transfers) from active subscription (does not) |
 | MCU Detection | MCU1 vs MCU2 for Model S/X (Model 3/Y are MCU2-class from launch) |
@@ -23,7 +23,7 @@ Tesla's FSD option and older transferable Supercharging can add real value, but 
 
 ## Data Sources
 
-**v2.0 change:** listings are now *discovered* via [Serper.dev](https://serper.dev) (a Google-backed search API) using `site:` searches, then optionally enriched with a polite, honestly-identified fetch of the listing's own page. This replaced direct scraping with rotating browser User-Agents against sites whose terms of service explicitly prohibit automated access (carsales.com.au runs DataDome specifically to detect this) -- see `discovery.py` for the full reasoning. Facebook Marketplace and Pickles auctions were dropped rather than ported; there's no comparable ToS-compliant path for either. AutoTrader listings from the pre-v2.0 scrape remain in the historical dataset but are no longer a live source.
+**v2.0 change:** listings are now *discovered* via [Serper.dev](https://serper.dev) (a Google-backed search API) using `site:` searches, then optionally enriched with a polite, honestly-identified fetch of the listing's own page. This replaced direct scraping with rotating browser User-Agents against sites whose terms of service explicitly prohibit automated access (carsales.com.au runs DataDome specifically to detect this) -- see `discovery.py` for the full reasoning. Pickles auctions remain dropped (salvage/insurance write-offs are a poor fit). **v2.1** expanded discovery to all the major AU classifieds and added best-effort Facebook Marketplace coverage via the same `site:` search, plus the every-48h dealership scanner (below). AutoTrader listings from the pre-v2.0 scrape remain in the historical dataset but are no longer a live source.
 
 | Source | Method |
 |--------|--------|
@@ -31,6 +31,33 @@ Tesla's FSD option and older transferable Supercharging can add real value, but 
 | **Drive.com.au** | Discovered via Serper `site:` search |
 | **Gumtree.com.au** | Discovered via Serper `site:` search |
 | **CarsGuide.com.au** | Discovered via Serper `site:` search |
+| **Cars4Sale.com.au** | Discovered via Serper `site:` search |
+| **Trading Post** | Discovered via Serper `site:` search |
+| **Shannons (auctions)** | Discovered via Serper `site:` search |
+| **Grays (auctions)** | Discovered via Serper `site:` search |
+| **Facebook Marketplace** | Best-effort via Serper `site:` search (snippet-only where Meta blocks detail fetches) |
+| **Prestige/EV dealer sites** | Every-48h scan of a self-growing dealership registry -- see below |
+
+### Dealership Scanner (`dealership_scan.py`) -- every 48 hours
+
+Carsales/Drive miss every Tesla a dealer sells directly off their own
+website. `dealership_scan.py` keeps a **self-growing registry** of dealer
+domains -- currently **56 verified dealerships** spanning prestige houses
+(Zagame, Nick Theodossi, Dutton One, Klosters, Corban), EV specialists
+(Evolve Motors, EV Auto), big dealer groups (Peter Warren, Motorama,
+Eagers, Alto, Autosports Group, Tynan, John Hughes, Frizelle) and
+**mainstream used-car dealerships** across Sydney, Melbourne, Brisbane,
+Perth, Adelaide, Canberra, Geelong, Newcastle, Wollongong, Gold Coast,
+Sunshine Coast and Darwin (Tony Lahood, Carma, CarCity, Cars Connect,
+Dustin's Autos and more -- in `data/dealerships.json`) -- and scans each
+one every 48h via the same `site:` SERP mechanism, so a car listed only at
+the dealer never escapes the dashboard.
+
+Each scan also **auto-discovers new dealer domains** from the results and
+appends them to the registry (capped per run), so coverage grows toward a
+full national list of Tesla-stocking dealers without manual curation. The
+current registry (count, by-state breakdown, full list) is exposed at
+`/api/dealerships` and shown in the UI's "Dealers" stat.
 
 ---
 
@@ -61,6 +88,8 @@ Tesla's FSD option and older transferable Supercharging can add real value, but 
 | `/api/listing/{id}` | GET | Single listing details |
 | `/api/refresh` | POST | Trigger live re-discovery (background) |
 | `/api/refresh-disk` | POST | Reload from disk (no discovery run) |
+| `/api/refresh-dealers` | POST | Trigger a dealership scan immediately (background, merges into data) |
+| `/api/dealerships` | GET | Dealership registry: count, by-state/category breakdown, full list |
 | `/api/health` | GET | Health check with version info |
 
 ### Frontend
@@ -111,7 +140,11 @@ Open [http://localhost:8000](http://localhost:8000)
 |----------|----------|--------------|
 | `SERPER_API_KEY` | **Yes, for live discovery** | Get one at [serper.dev](https://serper.dev) -- 2,500 free queries, then ~$1/1,000. Without it, `/api/refresh` logs an error and returns no new listings; the app still serves whatever is in `data/listings.json`. |
 | `PORT` | No | Server port (default: 8000, Railway sets automatically) |
-| `MAX_DETAIL_FETCHES` | No | Cap on per-listing detail-page fetches per discovery run (default: 60) |
+| `MAX_DETAIL_FETCHES` | No | Cap on per-listing detail-page fetches per marketplace discovery run (default: 60) |
+| `MAX_DEALER_DETAIL_FETCHES` | No | Cap on detail-page fetches per dealership scan (default: 40) |
+| `DEALER_QUERY_QUOTA` | No | Max `site:` queries per dealership scan (default: 200) |
+| `MAX_NEW_DEALERS_PER_RUN` | No | Cap on auto-discovered dealers added to the registry per scan (default: 40) |
+| `DEALER_SCAN_INTERVAL_HOURS` | No | Dealership scan interval (default: 48) |
 
 ### Deploy to Railway
 
@@ -122,6 +155,46 @@ Open [http://localhost:8000](http://localhost:8000)
 
 ---
 
+## Mobile Apps (v2.0)
+
+The web app is wrapped as a native app with [Capacitor](https://capacitorjs.com/).
+Both platforms now ship **bundled** -- the web assets live inside the app
+binary and talk to the backend through `window.API_BASE` (see
+`static/config.js`). This replaces the old hardcoded `server.url`, which
+silently outlived the Railway deployment it pointed at (404).
+
+**Point the app at your backend:** edit `static/config.js`:
+
+```js
+window.API_BASE = "https://your-deployed-backend.example.com";
+```
+
+Then re-sync + rebuild. The web preview needs no change (`API_BASE` stays
+`""` = same origin).
+
+### Android (.apk)
+
+Prereqs: JDK 17, Android SDK (platform 34 + build-tools 34.0.0), Node 18+.
+
+```bash
+npm run build:android          # sync + gradle assembleDebug
+# or: npm run apk              # ...and copy to dist/TeslaFSDFinderAU-debug.apk
+```
+
+Output: `android/app/build/outputs/apk/debug/app-debug.apk` (debug-signed,
+installable on any device). A copy is also kept at
+`dist/TeslaFSDFinderAU-v2.0-debug.apk`. For a release build, configure
+signing in `android/app/build.gradle` and run `./gradlew assembleRelease`.
+
+### iOS (.ipa)
+
+A full signed .ipa requires macOS + Xcode -- see [DEPLOY-IOS.md](DEPLOY-IOS.md)
+and `scripts/build-ios.sh`. For sideloading without a paid Apple Developer
+account, an **unsigned** IPA is kept at `dist/TeslaFSDFinderAU-unsigned-v2.0.ipa`
+(web assets refreshed to v2.0).
+
+---
+
 ## Project Structure
 
 ```
@@ -129,6 +202,7 @@ tesla-fsd-finder-au/
   main.py                  # FastAPI backend (API + scheduler)
   classify.py               # Classification engine (HW/MCU/FSD-transfer/Supercharging)
   discovery.py               # Serper-based discovery layer (replaces v1.2 direct scraping)
+  dealership_scan.py          # Every-48h scan of the self-growing dealer registry
   listing_utils.py            # Shared, source-agnostic listing helpers
   scrapers.py               # Thin orchestrator: discovery -> dedup
   requirements.txt         # Python dependencies
@@ -141,6 +215,7 @@ tesla-fsd-finder-au/
   .gitignore
   data/
     listings.json           # 146 historical listings, backfilled with v2.0 fields; auto-refreshed thereafter
+    dealerships.json        # Self-growing dealership registry (verified seed + auto-discovered)
     price_history.json      # Price tracking data (auto-generated)
     alerts.json             # Price drop alerts (auto-generated)
     devices.json            # Registered iOS device tokens (auto-generated)
@@ -195,6 +270,14 @@ Prerequisites: macOS, Xcode 15+, Node 18+, CocoaPods. See [DEPLOY-IOS.md](DEPLOY
 ---
 
 ## Changelog
+
+### v2.1.0 (August 2026)
+- Expanded marketplace discovery to 10 sources: added Cars4Sale, Trading Post, Shannons, Grays, and best-effort Facebook Marketplace (`site:` SERP search only -- no scraping)
+- New every-48h **dealership scanner** (`dealership_scan.py`): scans a self-growing registry of **56 verified dealerships** -- prestige houses (Zagame, Nick Theodossi, Dutton One), EV specialists (Evolve, EV Auto), major groups (Peter Warren, Motorama, Eagers, Alto, Autosports) and mainstream used-car dealers in every state (Tony Lahood, Carma, CarCity, Corban, Dustin's Autos + more) -- catching Teslas that never get listed on Carsales/Drive
+- Registry auto-discovers new dealer domains each run (capped), growing toward full national coverage; exposed via `/api/dealerships` and the new "Dealers" stat in the header
+- New endpoints: `/api/dealerships` (GET), `/api/refresh-dealers` (POST)
+- Frontend: "Dealer sites" source pill, dealer badge + accent on cards, new source colours for Cars4Sale/Trading Post/Shannons/Grays, dealer count in header stats
+- All new scan controls are environment-tunable (`DEALER_QUERY_QUOTA`, `MAX_NEW_DEALERS_PER_RUN`, `DEALER_SCAN_INTERVAL_HOURS`, etc.)
 
 ### v2.0.0 (July 2026)
 - Replaced direct multi-site scraping (rotating browser User-Agents against carsales.com.au, drive.com.au, gumtree.com.au, carsguide.com.au, pickles.com.au, plus a Facebook Marketplace Apify actor) with Serper.dev-based discovery -- see `discovery.py` for why
